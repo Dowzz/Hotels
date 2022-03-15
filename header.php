@@ -25,7 +25,7 @@
 
                 if ($type == "admin") {
                     echo '
-						<li><a href="#">Dashboard</a></li>
+						<li><a href="#">Tableau de bord</a></li>
                         <li><a href="logout.php">Déconnexion</a></li>						
 						';
                 }
