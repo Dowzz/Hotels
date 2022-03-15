@@ -1,0 +1,87 @@
+h4,
+h5,
+h6,
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Hubballi", cursive;
+  font-size: 100%;
+  background: #fff;
+}
+
+body a {
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+
+.navbar-default {
+  background-color: #f0f0f0 !important;
+  border-color: #000000;
+  height: 70px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-weight: 300;
+  color: #000000;
+}
+
+.navbar {
+  min-height: 100%;
+  margin-bottom: 0;
+}
+
+.navbar-nav {
+  float: right;
+  margin-top: 10px;
+}
+
+.navbar-brand {
+  padding: 0px;
+  margin-left: 15px;
+}
+
+.navbar-brand img {
+  height: 68px;
+}
+
+.groupement {
+  margin-left: 15px;
+  color: #000000;
+}
+
+.navbar-default .navbar-toggle {
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-nav {
+    margin-top: 30px;
+    background-color: #f0f0f0;
+    color: #000000;
+    border: 1px solid #000000;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .groupement {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
