@@ -15,8 +15,11 @@
     <?php include('header.php');
 
     $userid = $_SESSION['userid'];
+    $nom = $_SESSION['nom'];
+    $prenom = $_SESSION['prenom'];
 
     ?>
+    <h3 class="welcome">Bienvenue <?php echo $nom ?> <?php echo $prenom ?> </h3>
 
 </body>
 

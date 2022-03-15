@@ -57,6 +57,26 @@ body a {
 .navbar-default .navbar-toggle {
   margin-top: 15px;
 }
+.welcome {
+  margin-left: 20px;
+  text-align: center;
+}
+.container-register {
+  justify-content: center;
+}
+.registerraw,
+.loginrow {
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+.login-btn {
+  margin-top: 15px;
+}
+.mytitle {
+  text-align: center;
+}
+
 @media only screen and (max-width: 768px) {
   .navbar-nav {
     margin-top: 30px;

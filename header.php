@@ -25,8 +25,15 @@
 
                 if ($type == "admin") {
                     echo '
-						<li><a href="admin.php">Dashboard</a></li>						
+						<li><a href="#">Dashboard</a></li>
+                        <li><a href="logout.php">Déconnexion</a></li>						
 						';
+                }
+                if ($type == "client") {
+                    echo '
+                        <li><a href="logout.php">Déconnexion</a></li>
+                        <li><a href="#">Mes reservations</a></li>
+                        ';
                 } else {
                     echo '
 						<li><a href="login.php">Connexion</a></li>

@@ -16,20 +16,28 @@
 <body>
     <?php include('header.php');
     $variable = $_GET['id'];
-    $roletype = $_GET['roletype'];
-
     ?>
 
 
     <div class="container_register">
-        <div class="row">
+        <div class="row registerraw">
             <div class="col-sm-6">
                 <div class="login-content">
                     <form action="register.php" method="post">
                         <div class="section-title">
-                            <h3 class="mytitle">Inscription <?php echo $variable ?></h3>
+                            <h3 class="mytitle">Devenez Client</h3>
                         </div>
                         <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa fa-user"></i></span>
+                                <input type='text' required="required" name='nom' value="" class="form-control"
+                                    placeholder="Nom">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa fa-user"></i></span>
+                                <input type='text' required="required" name='prenom' value="" class="form-control"
+                                    placeholder="Prenom">
+                            </div>
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
                                 <input type='email' required="required" name='email' value="" class="form-control"
@@ -48,7 +56,7 @@
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     id="confirmPassword" required="required" value="" name="confirmpassword"
                                     class="form-control" placeholder="confirmation du Password">
-                                <input type="hidden" name="role" value=<?php echo $roletype ?>>
+                                <input type="hidden" name="role" value="client">
                             </div>
 
                         </div>
@@ -163,13 +171,15 @@
 
 
 if (isset($_POST['register'])) {
-
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $confirmpasword = $_POST['confirmpassword'];
-    $roletype = $_POST['role'];
-    if (mysqli_query($con, "INSERT INTO `user`(`email`,`h_password`, `role`) VALUES ('$email','$hashed_password', '$roletype')")) {
+    $role = $_POST['role'];
+
+    if (mysqli_query($con, "INSERT INTO `utilisateur`(`nom`,`prenom`,`email`,`password`, `role`) VALUES ('$nom', '$prenom', '$email','$hashed_password', '$role')")) {
         echo "<script> alert ('Inscription réussi ! votre compte va etre validé sous peu. ')</script>";
         echo "<script>window.location.href='login.php';</script>";
     } else {

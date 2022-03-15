@@ -70,6 +70,36 @@ body a {
   margin-top: 15px;
 }
 
+.welcome {
+  margin-left: 20px;
+  text-align: center;
+}
+
+.container-register {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.registerraw,
+.loginrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.login-btn {
+  margin-top: 15px;
+}
+
+.mytitle {
+  text-align: center;
+}
+
 @media only screen and (max-width: 768px) {
   .navbar-nav {
     margin-top: 30px;
