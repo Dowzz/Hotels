@@ -37,7 +37,7 @@
                 } else {
                     echo '
 						<li><a href="login.php">Connexion</a></li>
-                        <li><a href="register.php">Devenir client</a></li>
+                        <li><a href="register.php">Devenez client !</a></li>
                         ';
                 }
 
