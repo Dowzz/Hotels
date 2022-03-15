@@ -38,7 +38,7 @@
                     echo '
 						<li><a href="login.php">Connexion</a></li>
                         <li><a href="register.php">Devenez client !</a></li>
-                        <li><a href="test.php">test</a></li>
+                      
                         ';
                 }
 
