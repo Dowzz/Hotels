@@ -1,0 +1,52 @@
+CREATE TABLE Utilisateur(
+   userId INT NOT NULL AUTO_INCREMENT,
+   nom VARCHAR(50) NOT NULL,
+   prenom VARCHAR(50) NOT NULL,
+   email VARCHAR(50) NOT NULL,
+   password VARCHAR(255) NOT NULL,
+   role VARCHAR(50) NOT NULL,
+   PRIMARY KEY(userId)
+);
+
+CREATE TABLE Etablissement(
+   etabId INT NOT NULL AUTO_INCREMENT,
+   nom VARCHAR(50) NOT NULL,
+   ville VARCHAR(50) NOT NULL,
+   adresse VARCHAR(50) NOT NULL,
+   description VARCHAR(255) NOT NULL,
+   userId INT NOT NULL,
+   PRIMARY KEY(etabId),
+   UNIQUE(userId),
+   FOREIGN KEY(userId) REFERENCES Utilisateur(userId)
+);
+
+CREATE TABLE Suite(
+   suiteId INT NOT NULL AUTO_INCREMENT,
+   titre VARCHAR(50) NOT NULL,
+   image VARCHAR(255) NOT NULL,
+   descriptif VARCHAR(255) NOT NULL,
+   prix DECIMAL(15,2) NOT NULL,
+   galerie VARCHAR(100),
+   booking VARCHAR(100),
+   etabId INT NOT NULL,
+   PRIMARY KEY(suiteId),
+   FOREIGN KEY(etabId) REFERENCES Etablissement(etabId)
+);
+
+CREATE TABLE Reservation(
+   resId INT NOT NULL AUTO_INCREMENT,
+   suiteId INT NOT NULL,
+   etabId INT NOT NULL,
+   userId INT NOT NULL,
+   PRIMARY KEY(resId),
+   FOREIGN KEY(suiteId) REFERENCES Suite(suiteId),
+   FOREIGN KEY(etabId) REFERENCES Etablissement(etabId),
+   FOREIGN KEY(userId) REFERENCES Utilisateur(userId)
+);
+CREATE TABLE ImageGal(
+   id_image INT NOT NULL AUTO_INCREMENT,
+   link VARCHAR(255),
+   suiteId INT NOT NULL,
+   PRIMARY KEY(id_image),
+   FOREIGN KEY(suiteId) REFERENCES Suite(suiteId)
+);
