@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/Password_Checker.css" rel='stylesheet' type='text/css' />
     <title>Connexion</title>
-    <?php include('header_link.php') ?>
+
     <?php include('connect.php') ?>
 </head>
 
@@ -30,6 +30,8 @@
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
                                 <input type='email' required="required" name='email' value="" class="form-control"
                                     placeholder="Email">
+
+                                <span class="input-group-addon "><i class="fa fa-lock"></i></span>
                                 <input type="password" required="required" value="" name="password" class="form-control"
                                     placeholder="Password">
                             </div>

@@ -8,7 +8,7 @@
     <link href="css/Password_Checker.css" rel='stylesheet' type='text/css' />
 
     <title>Devenir client</title>
-    <?php include('header_link.php') ?>
+
     <?php include('connect.php') ?>
 
 </head>
@@ -28,29 +28,26 @@
                             <h3 class="mytitle">Devenez Client</h3>
                         </div>
                         <div class="textbox-wrap">
+
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
                                 <input type='text' required="required" name='nom' value="" class="form-control"
                                     placeholder="Nom">
-                            </div>
-                            <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
                                 <input type='text' required="required" name='prenom' value="" class="form-control"
                                     placeholder="Prenom">
-                            </div>
-                            <div class="input-group">
+
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
                                 <input type='email' required="required" name='email' value="" class="form-control"
                                     placeholder="Email">
                             </div>
+
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-lock"></i></span>
                                 <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     id="psw" required="required" value="" name="password" class="form-control"
                                     placeholder="Password">
-                            </div>
-                            <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-lock"></i></span>
                                 <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -60,6 +57,7 @@
                             </div>
 
                         </div>
+
                         <div class="login-btn">
                             <input type="submit" name="register" value="Inscription">
                         </div>
@@ -73,8 +71,8 @@
                         <div id="confirmMessage">
                             <p id="match" class="invalid">les mots de passes doivent correspondre</b></p>
                         </div>
-                    </form>
 
+                    </form>
 
                 </div>
             </div>
