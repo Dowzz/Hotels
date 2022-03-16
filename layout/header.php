@@ -8,26 +8,20 @@ function hideURLbar() {
 }
 </script>
 <link href="./css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
-
 <script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
-
 <link href="./css/style.css" rel='stylesheet' type='text/css' />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
-
-<link href="./css/font-awesome.css" rel="stylesheet">
-
+<script src="https://kit.fontawesome.com/bc25e6281e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                 data-target="#bs-example-navbar-collapse-1">
-
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -49,8 +43,9 @@ function hideURLbar() {
 
                 if ($type == "admin") {
                     echo '
-						<li><a href="#">Tableau de bord</a></li>
-                        <li><a href="logout.php">Déconnexion</a></li>						
+						<li><a href="ajout_établissement">Ajout d\'établissement</a></li>
+                        <li><a href="listing_utilisateur">Liste des utilisateurs</a></li>
+                        <li><a href="deconnexion">Déconnexion</a></li>						
 						';
                 }
                 if ($type == "client") {
@@ -58,17 +53,13 @@ function hideURLbar() {
                         <li><a href="deconnexion">Déconnexion</a></li>
                         <li><a href="#">Mes reservations</a></li>
                         ';
-                } else {
+                } if ($type=="") {
                     echo '
 						<li><a href="connexion">Connexion</a></li>
-                        <li><a href="devenir_client">Devenez client !</a></li>
-                      
+                        <li><a href="devenir_client">Devenez client !</a></li>     
                         ';
                 }
-
                 ?>
-
-
             </ul>
         </div>
         <div class="clearfix"> </div>

@@ -6,21 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
-
     <title>Devenir client</title>
-
+    <?php include('./layout/header.php') ?>
     <?php include('./Db/connect.php') ?>
-
 </head>
 
 <body>
-    <?php include('./layout/header.php');
-    $variable = $_GET['id'];
-    ?>
-
-
-    <div class="container_register">
-        <div class="row registerraw">
+    <div class="container_ container_register">
+        <div class="row registerrow">
             <div class="col-sm-6">
                 <div class="login-content">
                     <form action="devenir_client" method="post">
@@ -28,36 +21,37 @@
                             <h3 class="mytitle">Devenez Client</h3>
                         </div>
                         <div class="textbox-wrap">
-
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
                                 <input type='text' required="required" name='nom' value="" class="form-control"
                                     placeholder="Nom">
+                            </div>
+                            <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
                                 <input type='text' required="required" name='prenom' value="" class="form-control"
                                     placeholder="Prenom">
-
-                                <span class="input-group-addon "><i class="fa fa-user"></i></span>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa-solid fa-at"></i></span>
                                 <input type='email' required="required" name='email' value="" class="form-control"
                                     placeholder="Email">
                             </div>
-
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa fa-lock"></i></span>
+                                <span class="input-group-addon "><i class="fa-solid fa-lock"></i></span>
                                 <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     id="psw" required="required" value="" name="password" class="form-control"
                                     placeholder="Password">
-                                <span class="input-group-addon "><i class="fa fa-lock"></i></span>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa-solid fa-lock"></i></span>
                                 <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     id="confirmPassword" required="required" value="" name="confirmpassword"
                                     class="form-control" placeholder="confirmation du Password">
                                 <input type="hidden" name="role" value="client">
                             </div>
-
                         </div>
-
                         <div class="login-btn">
                             <input type="submit" name="register" value="Inscription">
                         </div>
@@ -71,9 +65,7 @@
                         <div id="confirmMessage">
                             <p id="match" class="invalid">les mots de passes doivent correspondre</b></p>
                         </div>
-
                     </form>
-
                 </div>
             </div>
             <script>
@@ -158,16 +150,10 @@
     </div>
 
 </body>
-
-
-
 <?php include('./layout/footer.php') ?>
 
 </html>
-
 <?php
-
-
 if (isset($_POST['register'])) {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
@@ -176,11 +162,10 @@ if (isset($_POST['register'])) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $confirmpasword = $_POST['confirmpassword'];
     $role = $_POST['role'];
-    $sql = "INSERT INTO `utilisateur`(`nom`, `prenom`, `email`, `password`, `role`) VALUES ('$nom', '$prenom', '$email','$hashed_password', '$role')";
+    $sql = "INSERT INTO `utilisateur`(`name`, `prenom`, `email`, `password`, `role`) VALUES ('$nom', '$prenom', '$email','$hashed_password', '$role')";
     
-
     if (mysqli_query($con, $sql)) {
-        echo "<script> alert ('Inscription réussi ! votre compte va etre validé sous peu. ')</script>";
+        echo "<script> alert (\"Inscription réussi ! vous allez etre redirigé vers l'espace de connexion...\")</script>";
         echo "<script>window.location.href='connexion';</script>";
     } else {
         echo "<script> alert ('Inscription Impossible')</script>";

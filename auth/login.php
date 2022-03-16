@@ -7,17 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
     <title>Connexion</title>
-
+    <?php include('./layout/header.php');?>
     <?php include('./Db/connect.php') ?>
 </head>
 
 <body>
-    <?php
-    include('./layout/header.php');
-
-    ?>
-
-    <div class="container_register">
+    <div class="container_ container_register">
         <div class="row loginrow">
             <div class="col-lg-4">
                 <div class="login-content">
@@ -27,11 +22,12 @@
                         </div>
                         <div class="textbox-wrap">
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa fa-user"></i></span>
+                                <span class="input-group-addon "><i class="fa-solid fa-at"></i></span>
                                 <input type='email' required="required" name='email' value="" class="form-control"
                                     placeholder="Email">
-
-                                <span class="input-group-addon "><i class="fa fa-lock"></i></span>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa-solid fa-lock"></i></span>
                                 <input type="password" required="required" value="" name="password" class="form-control"
                                     placeholder="Password">
                             </div>
@@ -39,21 +35,15 @@
                         <div class="login-btn">
                             <input type="submit" name="login" value="Connexion">
                         </div>
-
                     </form>
-
-
                 </div>
             </div>
         </div>
     </div>
-
-    <?php include('./layout/footer.php') ?>
-
 </body>
+<?php include('./layout/footer.php') ?>
 
 </html>
-
 <?php
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -61,7 +51,7 @@ if (isset($_POST['login'])) {
 
 
 
-    $sql = "select * from utilisateur where email = '$email'";
+    $sql = "SELECT * FROM utilisateur WHERE email = '$email'";
 
     $rs = mysqli_query($con, $sql);
     $data = mysqli_fetch_array($rs);
