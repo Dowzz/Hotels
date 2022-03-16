@@ -60,8 +60,8 @@ function hideURLbar() {
                         ';
                 } else {
                     echo '
-						<li><a href="login">Connexion</a></li>
-                        <li><a href="register">Devenez client !</a></li>
+						<li><a href="login.php">Connexion</a></li>
+                        <li><a href="register.php">Devenez client !</a></li>
                       
                         ';
                 }
