@@ -7,17 +7,17 @@ function hideURLbar() {
     window.scrollTo(0, 1);
 }
 </script>
-<link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+<link href="./css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="./css/style.css" rel='stylesheet' type='text/css' />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
 
-<link href="css/font-awesome.css" rel="stylesheet">
+<link href="./css/font-awesome.css" rel="stylesheet">
 
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
@@ -32,7 +32,7 @@ function hideURLbar() {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><img src="img/hypnos.png" alt="">
+            <a class="navbar-brand" href="index.php"><img src="./img/hypnos.png" alt="">
                 <span class="groupement">Groupement Hypnos</span></a>
         </div>
         <!--/.navbar-header-->
@@ -55,13 +55,13 @@ function hideURLbar() {
                 }
                 if ($type == "client") {
                     echo '
-                        <li><a href="logout">Déconnexion</a></li>
+                        <li><a href="deconnexion">Déconnexion</a></li>
                         <li><a href="#">Mes reservations</a></li>
                         ';
                 } else {
                     echo '
-						<li><a href="login.php">Connexion</a></li>
-                        <li><a href="register.php">Devenez client !</a></li>
+						<li><a href="connexion">Connexion</a></li>
+                        <li><a href="devenir_client">Devenez client !</a></li>
                       
                         ';
                 }

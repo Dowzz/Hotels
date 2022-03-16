@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/Password_Checker.css" rel='stylesheet' type='text/css' />
+    <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
 
     <title>Devenir client</title>
 
-    <?php include('connect.php') ?>
+    <?php include('./Db/connect.php') ?>
 
 </head>
 
 <body>
-    <?php include('header.php');
+    <?php include('./layout/header.php');
     $variable = $_GET['id'];
     ?>
 
@@ -23,7 +23,7 @@
         <div class="row registerraw">
             <div class="col-sm-6">
                 <div class="login-content">
-                    <form action="register.php" method="post">
+                    <form action="devenir_client" method="post">
                         <div class="section-title">
                             <h3 class="mytitle">Devenez Client</h3>
                         </div>
@@ -161,7 +161,7 @@
 
 
 
-<?php include('footer.php') ?>
+<?php include('./layout/footer.php') ?>
 
 </html>
 
@@ -176,10 +176,12 @@ if (isset($_POST['register'])) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $confirmpasword = $_POST['confirmpassword'];
     $role = $_POST['role'];
+    $sql = "INSERT INTO `utilisateur`(`nom`, `prenom`, `email`, `password`, `role`) VALUES ('$nom', '$prenom', '$email','$hashed_password', '$role')";
+    
 
-    if (mysqli_query($con, "INSERT INTO `utilisateur`(`nom`,`prenom`,`email`,`password`, `role`) VALUES ('$nom', '$prenom', '$email','$hashed_password', '$role')")) {
+    if (mysqli_query($con, $sql)) {
         echo "<script> alert ('Inscription réussi ! votre compte va etre validé sous peu. ')</script>";
-        echo "<script>window.location.href='login.php';</script>";
+        echo "<script>window.location.href='connexion';</script>";
     } else {
         echo "<script> alert ('Inscription Impossible')</script>";
     }

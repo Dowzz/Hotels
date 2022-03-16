@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/Password_Checker.css" rel='stylesheet' type='text/css' />
+    <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
     <title>Connexion</title>
 
-    <?php include('connect.php') ?>
+    <?php include('./Db/connect.php') ?>
 </head>
 
 <body>
     <?php
-    include('header.php');
+    include('./layout/header.php');
 
     ?>
 
@@ -21,7 +21,7 @@
         <div class="row loginrow">
             <div class="col-lg-4">
                 <div class="login-content">
-                    <form action="login.php" method="post">
+                    <form action="connexion" method="post">
                         <div class="section-title">
                             <h3 class="mytitle">Connexion</h3>
                         </div>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <?php include('footer.php') ?>
+    <?php include('./layout/footer.php') ?>
 
 </body>
 
