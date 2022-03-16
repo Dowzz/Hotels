@@ -14,7 +14,9 @@
 </head>
 
 <body>
+
     <div class="container_">
+        <h3 class="mytitle">Liste des utilisateurs</h3>
         <div class="col-md-12">
             <table class="table">
                 <thead>
@@ -33,7 +35,7 @@
        
         ?>
                     <tr>
-                        <td><?= $data['nom']?></td>
+                        <td><?= $data['name']?></td>
                         <td><?= $data['prenom']?></td>
                         <td><?= $data['email']?></td>
                         <td><?= $data['role']?></td>
