@@ -70,7 +70,7 @@ body a {
 
 .navbar-default .navbar-toggle {
   margin-top: 15px;
-  right: 20px;
+  right: 15px;
 }
 
 .welcome {
@@ -209,6 +209,7 @@ body a {
   .navbar-nav {
     background-color: #f0f0f0;
     color: #000000;
+    border: 1px solid #000000;
   }
   .container_ {
     margin-left: inherit;
