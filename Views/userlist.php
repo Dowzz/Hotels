@@ -14,6 +14,22 @@
 </head>
 
 <body>
+    <script>
+    $(document).ready(function() {
+
+        load_data();
+    });
+
+    function load_data() {
+        $.ajax({
+            url: "./script/update_role.php",
+            method: "POST",
+            success: function(data) {
+                $('#mytable').html(data);
+            }
+        });
+    };
+    </script>
 
     <div class="container_">
         <h3 class="mytitle">Liste des utilisateurs</h3>
@@ -25,36 +41,39 @@
                         <th>Prénom</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th>Promotion</th>
+                        <th>Retour client</th>
                     </tr>
                 </thead>
                 <tbody id="mytable">
-                    <?php 
-    $sql = "SELECT * FROM utilisateur";
-    $rs = mysqli_query($con, $sql);
-    while($data = mysqli_fetch_array($rs)) {
-       
-        ?>
-                    <tr>
-                        <td><?= $data['name']?></td>
-                        <td><?= $data['prenom']?></td>
-                        <td><?= $data['email']?></td>
-                        <td><?= $data['role']?></td>
-                    </tr>
-
                     <?php
-
+    if (isset($_POST['updateRole'])) {
+        $userId = $_POST['userId'];
+      $sql = "UPDATE utilisateur set role = 'gérant' where '$userId' = userId";
+      if (mysqli_query($con, $sql)) {
+          echo "<div class='message'><h3>Mise a jour effectué</3></div>";
+      }else {
+          echo "<script> alert ('mise a jour impossible !')</script>";
+      }
+    };
+    if (isset($_POST['degradeRole'])) {
+        $userId = $_POST['userId'];
+        $sql = "update utilisateur set role = 'client' where '$userId' = userId";
+        if (mysqli_query($con, $sql)) {
+            echo "<div class='message'><h3>Mise a jour effectué</3></div>";
+        }else {
+            echo "<script> alert ('mise a jour impossible !')</script>";
+        }
     }
-
     ?>
                 </tbody>
             </table>
         </div>
     </div>
-
-
-
-
+    <div class="col-md-12">
+        <?php include('./layout/footer.php') ?>
+    </div>
 </body>
-<?php include('./layout/footer.php') ?>
+
 
 </html>

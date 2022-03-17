@@ -97,6 +97,7 @@ body a {
 .table > tfoot > tr > th,
 .table > thead > tr > td,
 .table > thead > tr > th {
+  width: 250px;
   border-top: none;
   padding: 10px;
 }
@@ -116,7 +117,30 @@ body a {
   width: 80%;
   border-radius: 20px;
 }
+#upgrade-btn,
+#retro-btn {
+  width: fit-content;
+  padding: 5px;
+}
+#retro-btn {
+  background-color: lightcoral;
+}
+.message {
+  background-color: rgb(87, 87, 87);
+  color: #fff;
+  position: fixed;
+  bottom: 0px;
 
+  -webkit-animation: fadein 5s linear 1 normal forwards;
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 @media only screen and (max-width: 768px) {
   .navbar-nav {
     margin-top: 30px;

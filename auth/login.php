@@ -40,8 +40,12 @@
             </div>
         </div>
     </div>
+    <div class="col-md-12">
+        <?php include('./layout/footer.php') ?>
+    </div>
 </body>
-<?php include('./layout/footer.php') ?>
+
+
 
 </html>
 <?php

@@ -10,6 +10,27 @@
     <?php include('./layout/header.php');
     include('./Db/connect.php');
    ?>
+
+    <script>
+    $(document).ready(function() {
+        load_data();
+    });
+
+    function load_data() {
+        var action = "addetab";
+        $.ajax({
+            url: "./script/update_data.php",
+            method: "POST",
+            data: {
+                action: action
+            },
+            success: function(data) {
+                $('#mytable').html(data);
+
+            }
+        });
+    }
+    </script>
 </head>
 
 <body>
@@ -45,9 +66,9 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa-solid fa-user"></i></span>
                                 <label for="User">Choix du gérant</label>
-                                <select name="User" id="user">
+                                <select name="User" id="user" value="">
                                     <?php 
-                                $sql = "SELECT * FROM utilisateur";
+                                $sql = "SELECT * FROM utilisateur where role = 'gérant'";
                                 $rs = mysqli_query($con, $sql);
                                 while ($data = mysqli_fetch_array($rs)) {
                                     ?>
@@ -82,32 +103,16 @@
                             </tr>
                         </thead>
                         <tbody id="mytable">
-                            <?php 
-    $sql = "SELECT * FROM etablissement LEFT JOIN utilisateur ON etablissement.userId = utilisateur.userId";
-    $rs = mysqli_query($con, $sql);
-    while($data = mysqli_fetch_array($rs)) {
-       
-        ?>
-                            <tr>
-                                <td><?= $data['nom']?></td>
-                                <td><?= $data['ville']?></td>
-                                <td><?= $data['adresse']?></td>
-                                <td><?= $data['description']?></td>
-                                <td><?= $data['name']?></td>
-                                <td><?= $data['prenom']?></td>
-                            </tr>
 
-                            <?php
-
-    }
-
-    ?>
                         </tbody>
                     </table>
                 </div>
             </div>
+            <div class="col-md-12">
+                <?php include('./layout/footer.php') ?>
+            </div>
 </body>
-<?php include('./layout/footer.php') ?>
+
 
 </html>
 <?php 
@@ -120,7 +125,7 @@ if (isset($_POST['addetab'])) {
     $userid = $_POST['User'];
     $sql = "INSERT INTO `etablissement`(`nom`, `ville`, `adresse`, `description`, `userId`) VALUES ('$nom', '$city', '$address', '$desc', '$userid')";
     if (mysqli_query($con, $sql)) {
-        echo "<script> alert ('Ajout effectué !')</script>";
+        echo "<div class='message'><h3>Ajout effectué</3></div>";
     }else {
         echo "<script> alert ('Ajout impossible.')</script>";
     };
