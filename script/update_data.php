@@ -6,7 +6,9 @@ include('../Db/connect.php');
        
         ?>
 <tr>
-    <td><?= $data['nom']?></td>
+    <td>
+        <p><?= $data['nom']?></p>
+    </td>
     <td><?= $data['ville']?></td>
     <td><?= $data['adresse']?></td>
     <td><?= $data['description']?></td>

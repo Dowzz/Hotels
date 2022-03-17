@@ -7,10 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
     <title>ajout établissement</title>
-    <?php include('./layout/header.php');
-    include('./Db/connect.php');
+    <?php 
+        include('./layout/header.php');
+        include('./Db/connect.php');
+        error_reporting(1);
+        session_start();
+        $type = $_SESSION['role'];
+        if ($type == "client") {
+       header("location:connexion");
+        } if ($type=="") {
+        header("location:connexion");
+        }
    ?>
-
     <script>
     $(document).ready(function() {
         load_data();
@@ -36,7 +44,7 @@
 <body>
     <div class="container_ container_register">
         <div class="row addetabrow">
-            <div class="col-sm-6">
+            <div class="col-md-12">
                 <div class="login-content">
                     <form action="ajout_établissement" method="post">
                         <div class="section-title">
@@ -63,8 +71,7 @@
                                 <input type="text" required="required" value="" name="desc" class="form-control"
                                     placeholder="Description">
                             </div>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa-solid fa-user"></i></span>
+                            <div class="input-group" id="selector">
                                 <label for="User">Choix du gérant</label>
                                 <select name="User" id="user" value="">
                                     <?php 
@@ -127,7 +134,7 @@ if (isset($_POST['addetab'])) {
     if (mysqli_query($con, $sql)) {
         echo "<div class='message'><h3>Ajout effectué</3></div>";
     }else {
-        echo "<script> alert ('Ajout impossible.')</script>";
+        echo "<script> alert ('Ce gérant possède deja un établissement.')</script>";
     };
     
 };

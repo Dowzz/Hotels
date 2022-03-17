@@ -7,9 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
     <title>Liste des utilisateurs</title>
-    <?php include('./layout/header.php');
-      include('./Db/connect.php');
-
+    <?php 
+        include('./layout/header.php');
+        include('./Db/connect.php');
+        error_reporting(1);
+        session_start();
+        $type = $_SESSION['role'];
+        if ($type == "client") {
+           header("location:connexion");
+        } if ($type=="") {
+            header("location:connexion");
+        }
     ?>
 </head>
 
@@ -41,7 +49,7 @@
                         <th>Prénom</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Promotion</th>
+                        <th>Passage gérant</th>
                         <th>Retour client</th>
                     </tr>
                 </thead>

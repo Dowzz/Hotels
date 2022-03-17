@@ -4,6 +4,7 @@
  if(isset($_GET['url'])) {
    $url = $_GET['url'];
  }
+ 
   
  if($url == '') {
    require './Views/accueil.php';
@@ -19,11 +20,4 @@
    require './Views/userlist.php';
  }
  
- elseif(preg_match('#article-([0-9]+)#', $url, $params)) {
-   $idArticle = $params[1];
-   require 'article.php';
- } else {
-   require './Views/404.php';
- }
-  
  

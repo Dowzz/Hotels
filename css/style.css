@@ -33,7 +33,7 @@ body a {
 
 .navbar-default {
   background-color: #f0f0f0 !important;
-  border-color: #000000;
+  border-color: lightgray;
   height: 70px;
 }
 
@@ -111,7 +111,7 @@ body a {
 
 .table {
   background-color: #f0f0f0;
-  border: 1px solid black;
+  border: 1px solid lightgray;
 }
 
 #mytable {
@@ -122,24 +122,32 @@ body a {
 }
 
 .table > tbody > tr > td,
-.table > tbody > tr > th,
 .table > tfoot > tr > td,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > thead > tr > th {
-  width: 250px;
+.table > thead > tr > td {
+  width: 200px;
   border-top: none;
-  padding: 10px;
+  text-align: center;
+  margin-top: 15px;
 }
 
-.table > thead > tr > th,
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-  font-size: 0.85em;
-  color: #000;
+.table > thead > tr > th {
+  text-align: center;
+}
+
+#selector {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.table > tbody > tr:nth-child(odd) {
+  background: silver;
 }
 
 .container_ {
@@ -155,22 +163,33 @@ body a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 #retro-btn {
-  background-color: lightcoral;
+  background-color: green;
 }
 
 .message {
-  background-color: #575757;
-  color: #fff;
+  background-color: #000000;
+  color: #f0f0f0;
   position: fixed;
   bottom: 0px;
-  -webkit-animation: fadein 5s linear 1 normal forwards;
+  -webkit-animation: fadein 4s linear 1 normal forwards;
+          animation: fadein 4s linear 1 normal forwards;
 }
 
 @-webkit-keyframes fadein {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
   from {
     opacity: 1;
   }
@@ -184,7 +203,7 @@ body a {
     margin-top: 30px;
     background-color: #f0f0f0;
     color: #000000;
-    border: 1px solid #000000;
+    border: 1px solid lightgray;
   }
 }
 
