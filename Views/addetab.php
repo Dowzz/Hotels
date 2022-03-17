@@ -89,7 +89,7 @@
                                 ?>
                                 </select>
                             </div>
-                            <div class="login-btn">
+                            <div class="login-btn add-btn">
                                 <input type="submit" name="addetab" value="Ajouter">
                             </div>
 
@@ -100,13 +100,21 @@
                 <div class="col-md-12">
                     <table class="table">
                         <thead>
-                            <tr>
+                            <tr class="fulltr">
                                 <th>Nom de l'établissement</th>
                                 <th>Ville</th>
                                 <th>Adresse</th>
                                 <th>Description</th>
                                 <th>Nom gérant</th>
                                 <th>Prénom gérant</th>
+                            </tr>
+                            <tr class="collapsetr">
+                                <th>Nom</th>
+                                <th>Ville</th>
+                                <th>Adr.</th>
+                                <th>Desc.</th>
+                                <th>Gérant</th>
+                                <th>Prénom</th>
                             </tr>
                         </thead>
                         <tbody id="mytable">

@@ -44,8 +44,10 @@ body a {
   margin-bottom: 0;
 }
 .navbar-nav {
-  float: right;
+  position: fixed;
+  right: 40px;
   margin-top: 10px;
+  z-index: 999999;
 }
 .navbar-brand {
   padding: 0px;
@@ -60,6 +62,7 @@ body a {
 }
 .navbar-default .navbar-toggle {
   margin-top: 15px;
+  right: 20px;
 }
 .welcome {
   margin-left: 20px;
@@ -117,11 +120,14 @@ body a {
 .table > tbody > tr:nth-child(odd) {
   background: silver;
 }
+.collapsetr {
+  display: none;
+}
 .container_ {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 75%;
   border-radius: 20px;
 }
 #upgrade-btn,
@@ -149,15 +155,46 @@ body a {
     opacity: 0;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 796px) {
   .navbar-nav {
-    margin-top: 30px;
     background-color: $background;
     color: #000000;
-    border: 1px solid $border;
+  }
+  .container_ {
+    margin-left: inherit;
+    margin-right: inherit;
+    width: 98%;
+    background-color: inherit;
+  }
+  .input-group {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .add-btn {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .fulltr {
+    display: none;
+  }
+  .collapsetr {
+    display: contents;
+  }
+  .addetabrow {
+    background-color: inherit;
   }
 }
-
+@media only screen and (max-width: 400px) {
+  .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body {
+    font-size: smaller;
+  }
+}
 @media only screen and (max-width: 330px) {
   .groupement {
     display: none;

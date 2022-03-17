@@ -48,8 +48,10 @@ body a {
 }
 
 .navbar-nav {
-  float: right;
+  position: fixed;
+  right: 40px;
   margin-top: 10px;
+  z-index: 999999;
 }
 
 .navbar-brand {
@@ -68,6 +70,7 @@ body a {
 
 .navbar-default .navbar-toggle {
   margin-top: 15px;
+  right: 20px;
 }
 
 .welcome {
@@ -150,11 +153,15 @@ body a {
   background: silver;
 }
 
+.collapsetr {
+  display: none;
+}
+
 .container_ {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 75%;
   border-radius: 20px;
 }
 
@@ -198,12 +205,47 @@ body a {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 796px) {
   .navbar-nav {
-    margin-top: 30px;
     background-color: #f0f0f0;
     color: #000000;
-    border: 1px solid lightgray;
+  }
+  .container_ {
+    margin-left: inherit;
+    margin-right: inherit;
+    width: 98%;
+    background-color: inherit;
+  }
+  .input-group {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .add-btn {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .fulltr {
+    display: none;
+  }
+  .collapsetr {
+    display: contents;
+  }
+  .addetabrow {
+    background-color: inherit;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body {
+    font-size: smaller;
   }
 }
 
