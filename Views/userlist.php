@@ -54,25 +54,25 @@
                 </thead>
                 <tbody id="mytable">
                     <?php
-    if (isset($_POST['updateRole'])) {
-        $userId = $_POST['userId'];
-      $sql = "UPDATE utilisateur set role = 'gérant' where '$userId' = userId";
-      if (mysqli_query($con, $sql)) {
-          echo "<div class='message'><h3>Mise a jour effectué</3></div>";
-      }else {
-          echo "<script> alert ('mise a jour impossible !')</script>";
-      }
-    };
-    if (isset($_POST['degradeRole'])) {
-        $userId = $_POST['userId'];
-        $sql = "update utilisateur set role = 'client' where '$userId' = userId";
-        if (mysqli_query($con, $sql)) {
-            echo "<div class='message'><h3>Mise a jour effectué</3></div>";
-        }else {
-            echo "<script> alert ('mise a jour impossible !')</script>";
-        }
-    }
-    ?>
+                    if (isset($_POST['updateRole'])) {
+                        $userId = $_POST['userId'];
+                      $sql = "UPDATE utilisateur set role = 'gérant' where '$userId' = userId";
+                      if (mysqli_query($con, $sql)) {
+                          echo "<div class='message'><h3>Mise a jour effectué</3></div>";
+                      }else {
+                          echo "<script> alert ('mise a jour impossible !')</script>";
+                      }
+                    };
+                    if (isset($_POST['degradeRole'])) {
+                        $userId = $_POST['userId'];
+                        $sql = "update utilisateur set role = 'client' where '$userId' = userId";
+                        if (mysqli_query($con, $sql)) {
+                            echo "<div class='message'><h3>Mise a jour effectué</3></div>";
+                        }else {
+                            echo "<script> alert ('mise a jour impossible !')</script>";
+                        }
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

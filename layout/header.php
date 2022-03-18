@@ -18,7 +18,7 @@ function hideURLbar() {
 
 
 <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f0f0f0;">
-    <a class="navbar-brand" href="index.php"><img src="./img/hypnos.png" alt="">
+    <a class="navbar-brand" href="index.php"><img src="./img/hypnos.png" alt="logo">
         <span class="groupement">Groupement Hypnos</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>

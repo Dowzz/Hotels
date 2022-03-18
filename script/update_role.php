@@ -18,7 +18,7 @@ while($data = mysqli_fetch_array($rs)) {
             ?>
     <td>
 
-        <form action="listing_utilisateur" method="post">
+        <form id="promote" action="listing_utilisateur" method="post">
             <input name="userId" type="hidden" value=<?= $data['userId']?>>
             <input id="upgrade-btn" type="submit" name="updateRole" value="Devient gérant">
         </form>
@@ -27,7 +27,7 @@ while($data = mysqli_fetch_array($rs)) {
         }else if ($data['role'] == "gérant") {
             ?>
     <td>
-        <form name="myform2" action="listing_utilisateur" method="post">
+        <form id="demote" action="listing_utilisateur" method="post">
             <input name="userId" type="hidden" value=<?= $data['userId']?>>
             <input id="retro-btn" type="submit" name="degradeRole" value="Devient client">
         </form>
@@ -37,6 +37,9 @@ while($data = mysqli_fetch_array($rs)) {
         ?>
 
 </tr>
+<script>
+
+</script>
 <?php
 
 }
