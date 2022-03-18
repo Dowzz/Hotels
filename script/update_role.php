@@ -1,18 +1,16 @@
 <?php 
 include('../Db/connect.php');
 ?>
-
 <?php
 $sql = "SELECT * FROM utilisateur where role <> 'admin'";
 $rs = mysqli_query($con, $sql);
 while($data = mysqli_fetch_array($rs)) {
-   
     ?>
 <tr>
     <td>
         <form id="delete" action="listing_utilisateur" method="post">
             <input name="userId" type="hidden" value=<?= $data['userId']?>>
-            <input id="upgrade-btn" type="submit" name="delUser" value="Supprimer">
+            <input id="delUser-btn" type="submit" name="delUser" value="Supprimer">
         </form>
     </td>
     <td><?= $data['name']?></td>
@@ -41,7 +39,6 @@ while($data = mysqli_fetch_array($rs)) {
     <?php
         }
         ?>
-
 </tr>
 <?php
 }

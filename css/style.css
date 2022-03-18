@@ -244,6 +244,17 @@ body a {
   color: #fff;
 }
 
+#delUser-btn {
+  background-color: black;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .modal-content {
   border-radius: 15px;
 }
