@@ -13,9 +13,18 @@ while($data = mysqli_fetch_array($rs)) {
         <h5 class="card-title"><?= $data['titre']?></h5>
         <p class="card-text"><?= $data['descriptif']?></p>
         <p><?= $data['prix']?> €</p>
-        <a href="<?= $data['booking']?>">Liens Booking</a>
+        <p href="<?= $data['booking']?>">Liens Booking</p>
         <button class="galerie-btn"><a href="#" data-toggle="modal" data-target="#myModal">accès
-                galerie</a></button>
+                galerie</a>
+        </button>
+
+        <form action="mon_établissement" id="delsuite" method="post">
+            <input type="hidden" name="suiteId" value=<?= $data['suiteId']?>>
+            <input type="submit" id="delgal-btn" name="delSuite" value="Supprimer">
+        </form>
+
+
+
     </div>
 </div>
 <div class="modal fade" id="myModal">
@@ -31,11 +40,11 @@ while($data = mysqli_fetch_array($rs)) {
                 <button class="btn btn-primary" data-dismiss="modal" value="">
                     Annuler</i>
                 </button>
-
             </div>
         </div>
     </div>
 </div>
 <?php
-}
+};
+
 ?>

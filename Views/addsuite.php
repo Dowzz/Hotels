@@ -33,6 +33,7 @@
     <?php
     }
     ?>
+    <!-- function chargement des données -->
     <script>
     $(document).ready(function() {
         load_data();
@@ -113,6 +114,15 @@
             echo "<div class='message'><h3>Ajout effectué</3></div>";
         }else {
             echo "<script> alert ('ajout suite impossible')</script>";
+        }
+    }
+    if (isset($_POST['delSuite'])) {
+        $suiteId = $_POST['suiteId'];   
+        $sql= "DELETE FROM suite WHERE suiteId = $suiteId";
+        if (mysqli_query($con, $sql)) {
+            echo "<div class='message'><h3>supprimé</3></div>";
+        }else {
+            echo "<script> alert ('suppresion impossible')</script>";
         }
     }
 

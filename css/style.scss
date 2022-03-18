@@ -2,6 +2,7 @@ $font: #000000;
 $border: lightgray;
 $background: #f0f0f0;
 $blue: #3564ff;
+$red: rgb(175, 70, 70);
 
 h4,
 h5,
@@ -126,8 +127,14 @@ body a {
   padding: 10px;
   border-radius: 15px;
 }
+#delgal-btn {
+  width: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: $red;
+}
 #retro-btn {
-  background-color: green;
+  background-color: $red;
 }
 .message {
   background-color: $font;
@@ -170,11 +177,16 @@ body a {
     height: 194px;
   }
 }
+.card-body {
+  flex-direction: column;
+  text-align: center;
+}
 .galerie-btn {
-  padding: 5px;
   background-color: $blue;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 5px;
 
   a {
     color: #fff;

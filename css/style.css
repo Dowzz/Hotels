@@ -159,8 +159,17 @@ body a {
   border-radius: 15px;
 }
 
+#delgal-btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #af4646;
+}
+
 #retro-btn {
-  background-color: green;
+  background-color: #af4646;
 }
 
 .message {
@@ -215,11 +224,20 @@ body a {
   height: 194px;
 }
 
+.card-body {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
 .galerie-btn {
-  padding: 5px;
   background-color: #3564ff;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 5px;
 }
 
 .galerie-btn a {

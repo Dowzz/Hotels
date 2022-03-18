@@ -20,6 +20,7 @@
         }
     ?>
 </head>
+<!-- function chargement des données -->
 
 <body>
     <script>
@@ -56,7 +57,7 @@
                     <?php
                     if (isset($_POST['updateRole'])) {
                         $userId = $_POST['userId'];
-                      $sql = "UPDATE utilisateur set role = 'gérant' where '$userId' = userId";
+                      $sql = "UPDATE utilisateur SET ROLE = 'gérant' WHERE '$userId' = userId";
                       if (mysqli_query($con, $sql)) {
                           echo "<div class='message'><h3>Mise a jour effectué</3></div>";
                       }else {
@@ -65,7 +66,7 @@
                     };
                     if (isset($_POST['degradeRole'])) {
                         $userId = $_POST['userId'];
-                        $sql = "update utilisateur set role = 'client' where '$userId' = userId";
+                        $sql = "UPDATE utilisateur SET ROLE = 'client' WHERE '$userId' = userId";
                         if (mysqli_query($con, $sql)) {
                             echo "<div class='message'><h3>Mise a jour effectué</3></div>";
                         }else {

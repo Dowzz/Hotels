@@ -7,7 +7,6 @@ function hideURLbar() {
     window.scrollTo(0, 1);
 }
 </script>
-
 <script src="./js/jquery.min.js"></script>
 <script src="./js/popper.min.js"></script>
 <script src="./js/bootstrap.bundle.min.js"></script>
@@ -16,7 +15,7 @@ function hideURLbar() {
 <link href="./css/style.css" rel='stylesheet' type='text/css' />
 <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
 
-
+<!-- nav bar -->
 <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f0f0f0;">
     <a class="navbar-brand" href="index.php"><img src="./img/hypnos.png" alt="logo">
         <span class="groupement">Groupement Hypnos</span></a>

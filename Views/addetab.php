@@ -19,6 +19,7 @@
         header("location:connexion");
         }
    ?>
+    <!-- function chargement des données -->
     <script>
     $(document).ready(function() {
         load_data();

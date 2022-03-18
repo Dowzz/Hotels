@@ -37,12 +37,6 @@ while($data = mysqli_fetch_array($rs)) {
         ?>
 
 </tr>
-<script>
-
-</script>
 <?php
-
 }
-   
-
-    ?>
+?>

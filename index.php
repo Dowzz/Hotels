@@ -5,7 +5,7 @@
    $url = $_GET['url'];
  }
  
-  
+  // gestion des alias pour les routes
  if($url == '') {
    require './Views/accueil.php';
  } elseif ($url == 'connexion') {
