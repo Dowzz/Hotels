@@ -16,8 +16,10 @@
      require './auth/logout.php';
  } elseif ($url == 'ajout_établissement') {
    require './Views/addetab.php';
- } elseif ($url== 'listing_utilisateur') {
+ } elseif ($url == 'listing_utilisateur') {
    require './Views/userlist.php';
+ } elseif ($url == 'mon_établissement') {
+   require './Views/addsuite.php';
  }
  
  

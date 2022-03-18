@@ -49,8 +49,7 @@
                         <th>Prénom</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Passage gérant</th>
-                        <th>Retour client</th>
+                        <th>Edition role</th>
                     </tr>
                 </thead>
                 <tbody id="mytable">

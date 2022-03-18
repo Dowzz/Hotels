@@ -4,20 +4,15 @@ include('../Db/connect.php');
     $rs = mysqli_query($con, $sql);
     while($data = mysqli_fetch_array($rs)) {
        
-        ?>
+?>
 <tr>
-    <td>
-        <p><?= $data['nom']?></p>
-    </td>
+    <td><?= $data['nom']?></td>
     <td><?= $data['ville']?></td>
     <td><?= $data['adresse']?></td>
     <td><?= $data['description']?></td>
     <td><?= $data['name']?></td>
     <td><?= $data['prenom']?></td>
 </tr>
-
 <?php
-
     }
-
-    ?>
+?>

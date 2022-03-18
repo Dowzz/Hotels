@@ -77,6 +77,7 @@ if (isset($_POST['login'])) {
         $_SESSION['email'] = $email;
         $_SESSION['nom'] = $nom;
         $_SESSION['prenom'] = $prenom;
+        
 
         echo "<script>window.location.href='index.php';</script>";
     } else {

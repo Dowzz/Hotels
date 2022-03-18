@@ -26,7 +26,6 @@ CREATE TABLE Suite(
    image VARCHAR(255) NOT NULL,
    descriptif VARCHAR(255) NOT NULL,
    prix DECIMAL(15,2) NOT NULL,
-   galerie VARCHAR(100),
    booking VARCHAR(100),
    etabId INT NOT NULL,
    PRIMARY KEY(suiteId),

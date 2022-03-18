@@ -31,32 +31,8 @@ body a {
   -ms-transition: 0.5s all;
 }
 
-.navbar-default {
-  background-color: #f0f0f0 !important;
-  border-color: lightgray;
-  height: 70px;
-}
-
-.navbar-default .navbar-nav > li > a {
-  font-weight: 300;
-  color: #000000;
-}
-
-.navbar {
-  min-height: 100%;
-  margin-bottom: 0;
-}
-
-.navbar-nav {
-  position: fixed;
-  right: 40px;
-  margin-top: 10px;
-  z-index: 999999;
-}
-
 .navbar-brand {
-  padding: 0px;
-  margin-left: 15px;
+  padding: 5px;
 }
 
 .navbar-brand img {
@@ -68,9 +44,15 @@ body a {
   color: #000000;
 }
 
-.navbar-default .navbar-toggle {
-  margin-top: 15px;
-  right: 15px;
+.navbar-toggler {
+  border: none;
+  position: absolute;
+  right: 20px;
+}
+
+.navbar-nav {
+  position: absolute;
+  right: 30px;
 }
 
 .welcome {
@@ -187,6 +169,40 @@ body a {
           animation: fadein 4s linear 1 normal forwards;
 }
 
+.suite_list {
+  margin-top: 30px;
+}
+
+#carousel {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000000;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+#mycarousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.card {
+  border-radius: 15px;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 1;
@@ -206,11 +222,6 @@ body a {
 }
 
 @media only screen and (max-width: 796px) {
-  .navbar-nav {
-    background-color: #f0f0f0;
-    color: #000000;
-    border: 1px solid #000000;
-  }
   .container_ {
     margin-left: inherit;
     margin-right: inherit;
