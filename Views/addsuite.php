@@ -47,7 +47,6 @@
         });
     };
     </script>
-
 </head>
 
 <body>
@@ -91,6 +90,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container_">
             <div id="mycarousel">
 
