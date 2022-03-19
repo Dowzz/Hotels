@@ -6,30 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
-
     <title>mon établissement</title>
-    <?php 
-        include('./layout/header.php');
-        include('./Db/connect.php');
-        error_reporting(1);
-        session_start();
-        $type = $_SESSION['role'];
-        if ($type == "client") {
-           header("location:connexion");
-        } if ($type=="") {
-            header("location:connexion");
-        }
-        $userId = $_SESSION['userid'];
 
+    <?php 
+    include('./layout/header.php');
+    include('./Db/connect.php');
+    error_reporting(1);
+    session_start();
+    $type = $_SESSION['role'];
+    if ($type == "client") {
+       header("location:connexion");
+    } if ($type=="") {
+        header("location:connexion");
+    }
+    $userId = $_SESSION['userid'];
     $sql = "SELECT * FROM etablissement where userId = '$userId'";
     $rs = mysqli_query($con, $sql);
     while($data = mysqli_fetch_array($rs)) {
-    global $etabId;
-       $etabId = $data{'etabId'};
-        ?>
+    ?>
     <h3 class="mytitle"><?= $data['nom']?></h3>
     <input name="etabId" type="hidden" value=<?= $data['etabId']?>>
     <h4 class="mytitle"> <?= $data['adresse']?> <?= $data['ville']?></h4>
+
     <?php
     }
     ?>
@@ -49,6 +47,7 @@
         });
     };
     </script>
+
 </head>
 
 <body>
@@ -99,9 +98,13 @@
         </div>
     </div>
     <div class="col-md-12">
+
         <?php include('./layout/footer.php') ?>
+
     </div>
+
 </body>
+
 <?php
     if (isset($_POST['addsuite'])) {
         $titre = $_POST['titre'];
@@ -125,8 +128,7 @@
             echo "<script> alert ('suppresion impossible')</script>";
         }
     }
-
+    
     ?>
-
 
 </html>

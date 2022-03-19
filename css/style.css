@@ -8,10 +8,7 @@ h3 {
 }
 
 ul,
-ol {
-  margin: 0;
-}
-
+ol,
 p {
   margin: 0;
 }
@@ -80,26 +77,18 @@ body a {
   background-color: #f0f0f0;
 }
 
-.login-btn {
-  margin-top: 15px;
-}
-
-.mytitle {
-  text-align: center;
-}
-
-.input-group {
-  width: 100%;
-}
-
-.input-group-addon {
-  width: 50px;
-  margin: auto;
+.container_ {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  border-radius: 20px;
 }
 
 .table {
   background-color: #f0f0f0;
   border: 1px solid lightgray;
+  margin-top: 15px;
 }
 
 #mytable {
@@ -124,30 +113,32 @@ body a {
   text-align: center;
 }
 
-#selector {
-  margin-top: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .table > tbody > tr:nth-child(odd) {
   background: silver;
 }
 
-.collapsetr {
-  display: none;
+#delUser-btn {
+  background-color: black;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-.container_ {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-  border-radius: 20px;
+.login-btn {
+  margin-top: 15px;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-group-addon {
+  width: 50px;
+  margin: auto;
 }
 
 #upgrade-btn,
@@ -170,21 +161,6 @@ body a {
 
 #retro-btn {
   background-color: #af4646;
-}
-
-.message {
-  background-color: #000000;
-  color: #f0f0f0;
-  position: fixed;
-  top: 105px;
-  border-radius: 15px;
-  padding: 5px;
-  -webkit-animation: fadein 4s linear 1 normal forwards;
-          animation: fadein 4s linear 1 normal forwards;
-}
-
-.suite_list {
-  margin-top: 30px;
 }
 
 #carousel {
@@ -244,19 +220,9 @@ body a {
   color: #fff;
 }
 
-#delUser-btn {
-  background-color: black;
-  border: none;
-  border-radius: 15px;
-  padding: 10px;
-  margin-bottom: 5px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .modal-content {
   border-radius: 15px;
+  background-color: #f0f0f0;
 }
 
 .modal-header {
@@ -269,6 +235,39 @@ body a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.mytitle {
+  text-align: center;
+}
+
+#selector {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.collapsetr {
+  display: none;
+}
+
+.message {
+  background-color: #000000;
+  color: #f0f0f0;
+  position: fixed;
+  top: 105px;
+  border-radius: 15px;
+  padding: 5px;
+  -webkit-animation: fadein 4s linear 1 normal forwards;
+          animation: fadein 4s linear 1 normal forwards;
+}
+
+.suite_list {
+  margin-top: 30px;
 }
 
 @-webkit-keyframes fadein {

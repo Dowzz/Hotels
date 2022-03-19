@@ -10,15 +10,14 @@
 </head>
 
 <body>
+
     <?php include('./layout/header.php');?>
-    <?php
 
-
-    ?>
     <h3 class="welcome">Bienvenue <?php echo $nom ?> <?php echo $prenom ?> </h3>
-
     <div class="col-md-12">
+
         <?php include('./layout/footer.php') ?>
+
     </div>
 
 

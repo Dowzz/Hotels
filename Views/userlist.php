@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
     <title>Liste des utilisateurs</title>
+
     <?php 
         include('./layout/header.php');
         include('./Db/connect.php');
@@ -19,13 +20,13 @@
             header("location:connexion");
         }
     ?>
+
 </head>
 <!-- function chargement des données -->
 
 <body>
     <script>
     $(document).ready(function() {
-
         load_data();
     });
 
@@ -55,6 +56,7 @@
                     </tr>
                 </thead>
                 <tbody id="mytable">
+
                     <?php
                     if (isset($_POST['updateRole'])) {
                         $userId = $_POST['userId'];
@@ -84,14 +86,16 @@
                         }
                     }
                     ?>
+
                 </tbody>
             </table>
         </div>
     </div>
     <div class="col-md-12">
+
         <?php include('./layout/footer.php') ?>
+
     </div>
 </body>
-
 
 </html>

@@ -19,6 +19,7 @@
     <h1>Erreur 404 !</h1>
 
 </body>
+
 <?php include('./layout/footer.php') ?>
 
 </html>

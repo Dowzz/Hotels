@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
     <title>ajout établissement</title>
+
     <?php 
         include('./layout/header.php');
         include('./Db/connect.php');
@@ -35,7 +36,6 @@
             },
             success: function(data) {
                 $('#mytable').html(data);
-
             }
         });
     }
@@ -74,23 +74,28 @@
                         <div class="input-group" id="selector">
                             <label for="User">Choix du gérant</label>
                             <select name="User" id="user" value="">
+
                                 <?php 
                             $sql = "SELECT * FROM utilisateur where role = 'gérant'";
                             $rs = mysqli_query($con, $sql);
                             while ($data = mysqli_fetch_array($rs)) {
                                 ?>
-                                <option value=<?= $data['userId']?> name="userId"><?= $data['nom']?>
-                                    <?= $data['prenom']?>
+
+                                <option value=<?= $data['userId']?> name="userId">
+
+                                    <?= $data['prenom']?> <?= $data['name']?>
+
                                 </option>
+
                                 <?php
-                            };
-                            ?>
+                                };
+                                ?>
+
                             </select>
                         </div>
                         <div class="login-btn add-btn">
                             <input type="submit" name="addetab" value="Ajouter">
                         </div>
-
                 </form>
             </div>
             <div class="row">
@@ -105,6 +110,7 @@
                                     <th>Description</th>
                                     <th>Nom gérant</th>
                                     <th>Prénom gérant</th>
+                                    <th>Suppression</th>
                                 </tr>
                                 <tr class="collapsetr">
                                     <th>Nom</th>
@@ -113,6 +119,7 @@
                                     <th>Desc.</th>
                                     <th>Gérant</th>
                                     <th>Prénom</th>
+                                    <th>Suppr.</th>
                                 </tr>
                             </thead>
                             <tbody id="mytable">
@@ -122,22 +129,18 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-    </div>
-
-
 </body>
 <div class="col-md-12">
+
     <?php include('./layout/footer.php') ?>
+
 </div>
 
-
 </html>
+
 <?php 
 if (isset($_POST['addetab'])) {
-    
     $nom = $_POST['nom'];
     $city = $_POST['city'];
     $address = $_POST['address'];
@@ -147,8 +150,17 @@ if (isset($_POST['addetab'])) {
     if (mysqli_query($con, $sql)) {
         echo "<div class='message'><h3>Ajout effectué</3></div>";
     }else {
-        echo "<script> alert ('Ce gérant possède deja un établissement.')</script>";
-    };
-    
+        echo "<script> alert ('Ce gérant possède deja un établissement')</script>";
+    };  
+}
+
+if (isset($_POST['delEtab'])) {
+    $etabId = $_POST['etabId'];   
+    $sql= "DELETE FROM etablissement WHERE etabId = $etabId";
+    if (mysqli_query($con, $sql)) {
+        echo "<div class='message'><h3>supprimé</3></div>";
+    }else {
+        echo "<script> alert ('suppresion impossible')</script>";
 };
+}
 ?>

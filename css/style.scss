@@ -13,9 +13,7 @@ h3 {
   margin-top: 0;
 }
 ul,
-ol {
-  margin: 0;
-}
+ol,
 p {
   margin: 0;
 }
@@ -34,6 +32,8 @@ body a {
   -o-transition: 0.5s all;
   -ms-transition: 0.5s all;
 }
+
+//Navbar style
 
 .navbar-brand {
   padding: 5px;
@@ -54,6 +54,9 @@ body a {
   position: absolute;
   right: 30px;
 }
+
+//Container style
+
 .welcome {
   margin-left: 20px;
   text-align: center;
@@ -68,22 +71,20 @@ body a {
   justify-content: center;
   background-color: $background;
 }
-.login-btn {
-  margin-top: 15px;
+.container_ {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  border-radius: 20px;
 }
-.mytitle {
-  text-align: center;
-}
-.input-group {
-  width: 100%;
-}
-.input-group-addon {
-  width: 50px;
-  margin: auto;
-}
+
+// Table style
+
 .table {
   background-color: $background;
   border: 1px solid $border;
+  margin-top: 15px;
 }
 #mytable {
   padding: 10px;
@@ -102,24 +103,29 @@ body a {
 .table > thead > tr > th {
   text-align: center;
 }
-#selector {
-  margin-top: 5px;
-  display: flex;
-  justify-content: center;
-}
-
 .table > tbody > tr:nth-child(odd) {
   background: silver;
 }
-.collapsetr {
-  display: none;
+
+//button style
+
+#delUser-btn {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: fit-content;
 }
-.container_ {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-  border-radius: 20px;
+.login-btn {
+  margin-top: 15px;
+}
+.input-group {
+  width: 100%;
+}
+.input-group-addon {
+  width: 50px;
+  margin: auto;
 }
 #upgrade-btn,
 #retro-btn {
@@ -136,20 +142,9 @@ body a {
 #retro-btn {
   background-color: $red;
 }
-.message {
-  background-color: $font;
-  color: $background;
-  position: fixed;
-  top: 105px;
 
-  border-radius: 15px;
-  padding: 5px;
+//carousel style
 
-  animation: fadein 4s linear 1 normal forwards;
-}
-.suite_list {
-  margin-top: 30px;
-}
 #carousel {
   width: 50%;
   margin: 0 auto;
@@ -169,6 +164,9 @@ body a {
   display: flex;
   justify-content: space-between;
 }
+
+//card style
+
 .card {
   border-radius: 15px;
   margin: 0 15px;
@@ -192,16 +190,12 @@ body a {
     color: #fff;
   }
 }
-#delUser-btn {
-  background-color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 15px;
-  padding: 10px;
-  margin-bottom: 5px;
-  width: fit-content;
-}
+
+//modal style
+
 .modal-content {
   border-radius: 15px;
+  background-color: $background;
 }
 .modal-header {
   justify-content: center;
@@ -209,6 +203,38 @@ body a {
 .modal-footer {
   justify-content: center;
 }
+
+// Divers style
+
+.mytitle {
+  text-align: center;
+}
+
+#selector {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+.collapsetr {
+  display: none;
+}
+.message {
+  background-color: $font;
+  color: $background;
+  position: fixed;
+  top: 105px;
+
+  border-radius: 15px;
+  padding: 5px;
+
+  animation: fadein 4s linear 1 normal forwards;
+}
+.suite_list {
+  margin-top: 30px;
+}
+
+//animations
+
 @keyframes fadein {
   from {
     opacity: 1;
@@ -217,6 +243,9 @@ body a {
     opacity: 0;
   }
 }
+
+// media screen
+
 @media only screen and (max-width: 796px) {
   .table td,
   .table th {
