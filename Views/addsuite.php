@@ -42,7 +42,7 @@
             url: "./script/update_etab.php",
             method: "POST",
             success: function(data) {
-                $('#mycarousel').html(data);
+                $('#mycontainer').html(data);
             }
         });
     };
@@ -92,7 +92,7 @@
         </div>
 
         <div class="container_">
-            <div id="mycarousel">
+            <div id="mycontainer">
 
             </div>
         </div>

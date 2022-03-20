@@ -160,9 +160,64 @@ body a {
   border-radius: 15px;
   padding: 15px;
 }
-#mycarousel {
-  display: flex;
-  justify-content: space-between;
+
+//panel style
+
+.panel {
+  border: 1px solid gray;
+  margin-bottom: 15px;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.panel-body {
+  display: grid;
+  grid-template-columns: 35% 40% 25%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+}
+.panel-heading {
+  background-color: #727272;
+  color: $background;
+  padding-left: 5px;
+  overflow: hidden;
+}
+.gallery {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.image_default {
+  max-width: 250px;
+}
+.showcase {
+  width: 100%;
+  box-shadow: 5px 0px 0px black;
+}
+.overlay {
+  width: 70%;
+  height: 45px;
+  margin-top: 5px;
+  margin-right: 1px;
+  img:first-child {
+    margin-left: 4px;
+  }
+}
+.thumb {
+  width: 45px;
+  height: 100%;
+  max-height: 45px;
+}
+
+.details {
+  border: 1px solid lightgray;
+  p {
+    font-style: italic;
+  }
+}
+.price {
+  text-align: center;
+  margin: auto;
 }
 
 // Divers style
