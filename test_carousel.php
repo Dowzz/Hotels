@@ -1,28 +1,34 @@
-<div class="container_">
-    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./img/img1.jpg" alt="">
-                <h4>nom de la chambre</h4>
-
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <center>
+                    <h4 class="modal-title" id="myModalLabel">Edit User</h4>
+                </center>
             </div>
-            <div class="carousel-item">
-                <img src="./img/img2.jpg" alt="">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon" style="width:150px;">Firstname:</span>
+                        <input type="text" style="width:350px;" class="form-control" id="efirstname">
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon" style="width:150px;">Lastname:</span>
+                        <input type="text" style="width:350px;" class="form-control" id="elastname">
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon" style="width:150px;">Address:</span>
+                        <input type="text" style="width:350px;" class="form-control" id="eaddress">
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="./img/img3.jpg" alt="">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><span
+                        class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span> </i>
+                    Update</button>
             </div>
         </div>
-        <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev"><span
-                class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Précedent</span></a>
-        <a href="#carousel" class="carousel-control-next" role="button" data-slide="next"><span
-                class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Suivant</span></a>
     </div>
-    <script>
-    $('.caroussel').carousel({
-        pause: "null"
-    })
-    </script>
 </div>
