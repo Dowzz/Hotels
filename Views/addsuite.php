@@ -120,7 +120,7 @@ function load_data() {
     }
     if (isset($_POST['delSuite'])) {
         $suiteId = $_POST['suiteId'];   
-        $sql= "DELETE FROM suite WHERE suiteId = $suiteId";
+        $sql= "DELETE FROM suite WHERE suiteId = '$suiteId'";
         if (mysqli_query($con, $sql)) {
             echo "<div class='message'><h3>supprimé</3></div>";
         }else {
@@ -136,4 +136,3 @@ function load_data() {
 ?>
 
 </html>
-<!-- function chargement des données -->

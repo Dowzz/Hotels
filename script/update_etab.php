@@ -45,15 +45,28 @@ while($data = mysqli_fetch_array($rs)) {
         </div>
         <div class="details">
             <h3 class="panel-title"><?= $data['titre'] ?></h3>
-            <p><?= $data['descriptif'] ?></p>
+            <p class="panel-text"><?= $data['descriptif'] ?></p>
         </div>
         <div class="price">
             <p>Prix pour une nuit : <?= $data['prix'] ?> €</p>
             <a href=<?= $data['booking']?>>liens booking</a>
+            <form action="mon_établissement" id="delete" method="post">
+                <input type="hidden" name="suiteId" value=<?= $data['suiteId']?>>
+                <input type="submit" id="delgal-btn" name="delSuite" value="Supprimer">
+            </form>
         </div>
     </div>
 </div>
 <?php 
+if (isset($_POST['delSuite'])) {
+    $suiteId = $_POST['suiteId'];   
+    $sql= "DELETE FROM suite WHERE suiteId = $suiteId";
+    if (mysqli_query($con, $sql)) {
+        echo "<div class='message'><h3>supprimé</3></div>";
+    }else {
+        echo "<script> alert ('suppresion impossible')</script>";
+};
+}
 };
 ?>
 <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -94,7 +107,6 @@ $(document).ready(function() {
             data: 'rowid=' + rowid,
             success: function(data) {
                 $('.fetched-data').html(data);
-                console.log(data);
             }
         })
     })

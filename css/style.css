@@ -242,6 +242,12 @@ body a {
 
 .image_default {
   max-width: 250px;
+  margin-left: 25px;
+}
+
+.panel-title,
+.panel-text {
+  margin-left: 50px;
 }
 
 .showcase {
@@ -252,6 +258,7 @@ body a {
 }
 
 .thumbsnail_list {
+  margin-left: 25px;
   position: relative;
   overflow: hidden;
   width: 90%;
