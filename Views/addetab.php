@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
+
     <title>ajout établissement</title>
 
     <?php 
@@ -30,10 +30,11 @@
         var action = "addetab";
         $.ajax({
             url: "./script/update_data.php",
-            method: "POST",
+            type: "POST",
             data: {
                 action: action
             },
+
             success: function(data) {
                 $('#mytable').html(data);
             }

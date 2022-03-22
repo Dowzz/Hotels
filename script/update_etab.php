@@ -3,12 +3,11 @@ include('../Db/connect.php');
 error_reporting(1);
 session_start();
 $type = $_SESSION['role'];
-        if ($type == "client") {
+    if ($type == "client") {
        header("location:connexion");
-        } if ($type=="") {
+    } if ($type=="") {
         header("location:connexion");
-        }
-        include ('modal.php');
+    }
 $userId = $_SESSION['userid'];
 $sql = "SELECT * FROM etablissement left join suite on etablissement.etabId = suite.etabId where userId = '$userId'" ;
 $rs = mysqli_query($con, $sql);
@@ -38,8 +37,8 @@ while($data = mysqli_fetch_array($rs)) {
         ?>
 
                 <div class="overlay">
-                    <a href="#mymodal?suite=<?=$data['suiteId']?>" id="modal-btn" type="button" data-toggle="modal"
-                        data-target="#mymodal" class="middle" value="<?php echo $data['suiteId']; ?>">Tout
+                    <a href="#mymodal" id="modal-btn" type="button" data-toggle="modal" data-target="#mymodal"
+                        class="middle" data-id="<?php echo $data['suiteId']; ?>">Tout
                         voir</a>
                 </div>
             </div>
@@ -54,7 +53,50 @@ while($data = mysqli_fetch_array($rs)) {
         </div>
     </div>
 </div>
-
 <?php 
 };
 ?>
+<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+                <div class="container_">
+                    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="fetched-data"></div>
+                        </div>
+                        <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev"><span
+                                class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Précedent</span></a>
+                        <a href="#carousel" class="carousel-control-next" role="button" data-slide="next"><span
+                                class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Suivant</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$('.caroussel').carousel({
+    pause: "null"
+})
+
+$(document).ready(function() {
+    $('#mymodal').on('show.bs.modal', function(e) {
+        var rowid = $(e.relatedTarget).data('id');
+        $.ajax({
+            type: 'post',
+            url: './script/fetch_record.php',
+            data: 'rowid=' + rowid,
+            success: function(data) {
+                $('.fetched-data').html(data);
+                console.log(data);
+            }
+        })
+    })
+})
+</script>

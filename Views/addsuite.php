@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
     <title>mon établissement</title>
 
     <?php 
@@ -27,26 +26,6 @@
     <h3 class="mytitle"><?= $data['nom']?></h3>
     <input name="etabId" type="hidden" value=<?= $data['etabId']?>>
     <h4 class="mytitle"> <?= $data['adresse']?> <?= $data['ville']?></h4>
-
-    <?php
-    }
-    ?>
-    <!-- function chargement des données -->
-    <script>
-    $(document).ready(function() {
-        load_data();
-    });
-
-    function load_data() {
-        $.ajax({
-            url: "./script/update_etab.php",
-            method: "POST",
-            success: function(data) {
-                $('#mycontainer').html(data);
-            }
-        });
-    };
-    </script>
 </head>
 
 <body>
@@ -82,6 +61,7 @@
                                 <input type="text" required="required" value="" name="booking" class="form-control"
                                     placeholder="Lien Booking">
                             </div>
+                            <input type="hidden" name="etabId" value=<?= $data['etabId']?>>
                         </div>
                         <div class="login-btn add-btn">
                             <input type="submit" name="addsuite" value="Ajouter">
@@ -104,7 +84,25 @@
     </div>
 
 </body>
+<script>
+$(document).ready(function() {
+    load_data();
+});
 
+function load_data() {
+    var action = "addsuite";
+    $.ajax({
+        url: "./script/update_etab.php",
+        type: "POST",
+        data: {
+            action: action
+        },
+        success: function(data) {
+            $('#mycontainer').html(data);
+        }
+    });
+}
+</script>
 <?php
     if (isset($_POST['addsuite'])) {
         $titre = $_POST['titre'];
@@ -112,6 +110,7 @@
         $desc = $_POST['descriptif'];
         $prix = $_POST['prix'];
         $book = $_POST['booking'];
+        $etabId = $_POST['etabId'];
         $sql = "INSERT INTO `suite`(`titre`, `image`, `descriptif`, `prix`, `booking`, `etabId`) VALUES ('$titre', '$image', '$desc', '$prix', '$book', '$etabId')";
         if (mysqli_query($con, $sql)) {
             echo "<div class='message'><h3>Ajout effectué</3></div>";
@@ -131,4 +130,10 @@
     
     ?>
 
+
+<?php
+}
+?>
+
 </html>
+<!-- function chargement des données -->
