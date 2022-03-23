@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php 
+ error_reporting(1);
+ session_start();
+ $nom = $_SESSION['nom'];
+ $prenom = $_SESSION['prenom'];
+ include('./layout/navbar.php');
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -10,17 +17,18 @@
 </head>
 
 <body>
-
-    <?php include('./layout/header.php');?>
-
     <h3 class="welcome">Bienvenue <?php echo $nom ?> <?php echo $prenom ?> </h3>
-    <div class="col-md-12">
+    <div>
+        <div class="content"></div>
 
-        <?php include('./layout/footer.php') ?>
+
+
+
 
     </div>
 
 
 </body>
+
 
 </html>

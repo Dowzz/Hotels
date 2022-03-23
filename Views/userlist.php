@@ -9,7 +9,7 @@
     <title>Liste des utilisateurs</title>
 
     <?php 
-        include('./layout/header.php');
+      
         include('./Db/connect.php');
         error_reporting(1);
         session_start();
@@ -91,11 +91,7 @@
             </table>
         </div>
     </div>
-    <div class="col-md-12">
 
-        <?php include('./layout/footer.php') ?>
-
-    </div>
 </body>
 
 </html>

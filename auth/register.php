@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devenir client</title>
-    <?php include('./layout/header.php') ?>
+
     <?php include('./Db/connect.php') ?>
 </head>
 
@@ -147,9 +147,7 @@
 
         </div>
     </div>
-    <div class="col-md-12">
-        <?php include('./layout/footer.php') ?>
-    </div>
+
 </body>
 
 

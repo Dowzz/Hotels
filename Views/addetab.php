@@ -9,7 +9,7 @@
     <title>ajout établissement</title>
 
     <?php 
-        include('./layout/header.php');
+    
         include('./Db/connect.php');
         error_reporting(1);
         session_start();
@@ -132,11 +132,7 @@
             </div>
         </div>
 </body>
-<div class="col-md-12">
 
-    <?php include('./layout/footer.php') ?>
-
-</div>
 
 </html>
 

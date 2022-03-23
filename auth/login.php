@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
-    <?php include('./layout/header.php');?>
     <?php include('./Db/connect.php') ?>
 </head>
 
@@ -80,6 +79,9 @@ if (isset($_POST['login'])) {
 
         echo "<script>window.location.href='index.php';</script>";
     } else {
-        echo "<script> alert ('Ce compte n\'existe pas')</script>";
+        echo "<script>
+        window.location.href='index.php'
+        alert ('Ce compte n\'existe pas')
+        </script>";
     }
 }
