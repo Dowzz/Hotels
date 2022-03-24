@@ -273,6 +273,13 @@ body a {
 
 // Divers style
 
+#response {
+  text-align: center;
+  font-weight: bolder;
+  background-color: $background;
+  padding: 5px;
+}
+
 .mytitle {
   text-align: center;
 }

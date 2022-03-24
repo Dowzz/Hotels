@@ -16,7 +16,7 @@
         $type = $_SESSION['role'];
         if ($type == "client") {
        header("location:connexion");
-        } if ($type=="") {
+        }elseif ($type== "") {
         header("location:connexion");
         }
    ?>
@@ -47,29 +47,29 @@
     <div class="container_ container_register">
         <div class="row addetabrow">
             <div class="login-content">
-                <form action="ajout_établissement" method="post">
+                <form id="addetab" action="ajout_établissement" method="post">
                     <div class="section-title">
                         <h3 class="mytitle">Ajout d'établissement</h3>
                     </div>
                     <div class="textbox-wrap">
                         <div class="input-group">
                             <span class="input-group-addon "><i class="fa-solid fa-font"></i></span>
-                            <input type='text' required="required" name='nom' value="" class="form-control"
+                            <input type='text' required="required" name='nom' id='nom' value="" class="form-control"
                                 placeholder="Nom de l'établissement">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon "><i class="fa-solid fa-city"></i></span>
-                            <input type='text' required="required" name='city' value="" class="form-control"
+                            <input type='text' required="required" name='city' id="city" value="" class="form-control"
                                 placeholder="Ville">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon "><i class="fa-solid fa-location-dot"></i></span>
-                            <input type='text' required="required" name='address' value="" class="form-control"
-                                placeholder="Adresse">
+                            <input type='text' required="required" name='address' id="address" value=""
+                                class="form-control" placeholder="Adresse">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon "><i class="fa-solid fa-comment"></i></span>
-                            <input type="text" required="required" value="" name="desc" class="form-control"
+                            <input type="text" required="required" value="" name="desc" id="desc" class="form-control"
                                 placeholder="Description">
                         </div>
                         <div class="input-group" id="selector">
@@ -82,7 +82,7 @@
                             while ($data = mysqli_fetch_array($rs)) {
                                 ?>
 
-                                <option value=<?= $data['userId']?> name="userId">
+                                <option value=<?= $data['userId']?> id="utilisateur" name="userId">
 
                                     <?= $data['prenom']?> <?= $data['name']?>
 
@@ -99,6 +99,7 @@
                         </div>
                 </form>
             </div>
+            <p id="message"></p>
             <div class="row">
                 <div class="container">
                     <div class="col-md-12">
@@ -137,27 +138,5 @@
 </html>
 
 <?php 
-if (isset($_POST['addetab'])) {
-    $nom = $_POST['nom'];
-    $city = $_POST['city'];
-    $address = $_POST['address'];
-    $desc = $_POST['desc'];
-    $userid = $_POST['User'];
-    $sql = "INSERT INTO `etablissement`(`nom`, `ville`, `adresse`, `description`, `userId`) VALUES ('$nom', '$city', '$address', '$desc', '$userid')";
-    if (mysqli_query($con, $sql)) {
-        echo "<div class='message'><h3>Ajout effectué</3></div>";
-    }else {
-        echo "<script> alert ('Ce gérant possède deja un établissement')</script>";
-    };  
-}
 
-if (isset($_POST['delEtab'])) {
-    $etabId = $_POST['etabId'];   
-    $sql= "DELETE FROM etablissement WHERE etabId = $etabId";
-    if (mysqli_query($con, $sql)) {
-        echo "<div class='message'><h3>supprimé</3></div>";
-    }else {
-        echo "<script> alert ('suppresion impossible')</script>";
-};
-}
 ?>

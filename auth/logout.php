@@ -1,10 +1,7 @@
 <?php
 
 session_start();
-session_unset();
+unset($_SESSION['loggedIn']);
 session_destroy();
-
+header('Location: accueil');
 ?>
-<script>
-location.reload();
-</script>

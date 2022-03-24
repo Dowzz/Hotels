@@ -15,7 +15,7 @@
     $type = $_SESSION['role'];
     if ($type == "client") {
        header("location:connexion");
-    } if ($type=="") {
+    }elseif ($type== "") {
         header("location:connexion");
     }
     $userId = $_SESSION['userid'];

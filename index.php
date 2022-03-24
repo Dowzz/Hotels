@@ -27,7 +27,7 @@ $url = $_GET['url'];
 }
 
 // gestion des alias pour les routes
-if($url == '' || $url == 'accueil') {
+if($url == '' || $url == 'accueil' ) {
 require './Views/accueil.php';
 } elseif ($url == 'connexion') {
 require './auth/login.php';

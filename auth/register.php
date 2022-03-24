@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php include('./layout/navbar.php'); ?>
 
 <head>
     <meta charset="UTF-8">

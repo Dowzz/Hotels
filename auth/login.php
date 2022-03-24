@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php include('./layout/navbar.php');
+session_start();
+if (isset ($_SESSION['loggedIn'])) {
+header('Location: accueil');
+exit();
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -14,20 +21,20 @@
         <div class="row loginrow">
             <div class="col-lg-4">
                 <div class="login-content">
-                    <form action="connexion" method="post">
+                    <form id="loginform" action="connexion" method="post">
                         <div class="section-title">
                             <h3 class="mytitle">Connexion</h3>
                         </div>
                         <div class="textbox-wrap">
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa-solid fa-at"></i></span>
-                                <input type='email' required="required" name='email' value="" class="form-control"
-                                    placeholder="Email">
+                                <input type='email' required="required" id="email" name='email' value=""
+                                    class="form-control" placeholder="Email">
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa-solid fa-lock"></i></span>
-                                <input type="password" required="required" value="" name="password" class="form-control"
-                                    placeholder="Password">
+                                <input type="password" required="required" value="" id="password" name="password"
+                                    class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <div class="login-btn">
@@ -38,50 +45,11 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
-        <?php include('./layout/footer.php') ?>
+    <div>
+        <p id="response"></p>
     </div>
 </body>
 
 
 
 </html>
-<?php
-if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-
-
-    $sql = "SELECT * FROM utilisateur WHERE email = '$email'";
-
-    $rs = mysqli_query($con, $sql);
-    $data = mysqli_fetch_array($rs);
-    $dbpassword = $data[4];
-
-
-    if (password_verify($password, $dbpassword)) {
-
-        session_start();
-        $role = $data[5];
-        $userid = $data[0];
-        $email = $data[3];
-        $nom = $data[1];
-        $prenom = $data[2];
-
-
-        $_SESSION['role'] = $role;
-        $_SESSION['userid'] = $userid;
-        $_SESSION['email'] = $email;
-        $_SESSION['nom'] = $nom;
-        $_SESSION['prenom'] = $prenom;
-        
-
-        echo "<script>window.location.href='index.php';</script>";
-    } else {
-        echo "<script>
-        window.location.href='index.php'
-        alert ('Ce compte n\'existe pas')
-        </script>";
-    }
-}

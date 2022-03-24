@@ -328,6 +328,13 @@ body a {
   margin: auto;
 }
 
+#response {
+  text-align: center;
+  font-weight: bolder;
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+
 .mytitle {
   text-align: center;
 }
