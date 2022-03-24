@@ -14,20 +14,20 @@
 
                 if ($type == "admin") {
                     echo '
-						<li class="nav-item"><a class="nav-link navlink" href="ajout_établissement">Ajout d\'établissement</a></li>
-                        <li class="nav-item"><a class="nav-link navlink" href="listing_utilisateur">Liste des utilisateurs</a></li>
+						<li class="nav-item"><a class="nav-link navlink" href="ajout_établissement" onclick="remove(href)">Ajout d\'établissement</a></li>
+                        <li class="nav-item"><a class="nav-link navlink" href="listing_utilisateur" onclick="remove(href)">Liste des utilisateurs</a></li>
                         <li class="nav-item"><a class="nav-link" href="deconnexion">Déconnexion</a></li>						
 						';
                 }
                 if ($type == "client") {
                     echo '
-                        <li class="nav-item"><a class="nav-link navlink" href="#">Mes reservations</a></li>
+                        <li class="nav-item"><a class="nav-link navlink" href="#" onclick="remove(href)">Mes reservations</a></li>
                         <li class="nav-item"><a class="nav-link" href="deconnexion">Déconnexion</a></li>
                         ';
                 } 
                 if ($type == "gérant") {
                     echo '
-                        <li class="nav-item"><a class="nav-link navlink" href="mon_établissement">Mon établissement</a></li>
+                        <li class="nav-item"><a class="nav-link navlink" href="mon_établissement" onclick="remove(href)">Mon établissement</a></li>
                         <li class="nav-item"><a class="nav-link" href="deconnexion">Déconnexion</a></li>
                         ';
 
@@ -43,4 +43,13 @@
         </ul>
     </div>
     <div class="clearfix"> </div>
-</nav><!-- nav bar -->
+</nav>
+<script>
+function remove(id) {
+    if (id === (document.getElementById(id))) {
+        return
+    } else {
+        $('.content').removeClass('detract');
+    }
+}
+</script>

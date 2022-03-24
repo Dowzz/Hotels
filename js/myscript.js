@@ -5,18 +5,16 @@ $(() => {
   $(function () {
     $(document.getElementsByClassName("navlink")).click(function (e) {
       e.preventDefault();
+      e.stopImmediatePropagation();
       url = this.href;
       $.get(url, function (data) {
+        $(".content").html("");
         $(".content").addClass("detract");
         $(".content").html(data);
-        if (window.matchMedia("(max-width: 1250px)").matches) {
-          document
-            .getElementById("check")
-            .dispatchEvent(new MouseEvent("click", { shiftKey: true }));
-        }
       });
     });
   });
+
   $("#loginform").submit(function (e) {
     e.preventDefault();
     var email = document.getElementById("email").value;
@@ -38,29 +36,28 @@ $(() => {
       dataType: "text",
     });
   });
-  $("#addetab").submit(function (e) {
+  $("#addetabform").submit(function (e) {
     e.preventDefault();
+    e.stopImmediatePropagation();
     var nom = document.getElementById("nom").value;
     var city = document.getElementById("city").value;
     var address = document.getElementById("address").value;
     var desc = document.getElementById("desc").value;
-    var utilisateur = document.getElementById("utilisateur").value;
-    console.log(nom, city, address, desc, utilisateur);
+    var userId = document.getElementById("user").value;
     $.ajax({
-      url: "./script/update_data.php",
-      method: "post",
+      url: "./script/etabform.php",
+      method: "POST",
       data: {
-        addetab: 1,
+        addetabform: 1,
         nom: nom,
         city: city,
         address: address,
         desc: desc,
-        utilisateur: utilisateur,
+        userId: userId,
       },
       success: function (response) {
-        $("#message").html(response);
+        $("#response").html(response);
       },
-      dataType: "text",
     });
   });
 });

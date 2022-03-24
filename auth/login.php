@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php include('./layout/navbar.php');
+ include('./style/style.php');
 session_start();
 if (isset ($_SESSION['loggedIn'])) {
 header('Location: accueil');
@@ -12,6 +13,9 @@ exit();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
     <title>Connexion</title>
     <?php include('./Db/connect.php') ?>
 </head>

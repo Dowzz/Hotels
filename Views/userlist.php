@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/Password_Checker.css" rel='stylesheet' type='text/css' />
-    <title>Liste des utilisateurs</title>
-
-    <?php 
-      
+<?php 
+        include('./style/style.php');
         include('./Db/connect.php');
         error_reporting(1);
         session_start();
@@ -22,25 +12,8 @@
     ?>
 
 </head>
-<!-- function chargement des données -->
 
 <body>
-    <script>
-    $(document).ready(function() {
-        load_data();
-    });
-
-    function load_data() {
-        $.ajax({
-            url: "./script/update_role.php",
-            method: "POST",
-            success: function(data) {
-                $('#mytable').html(data);
-            }
-        });
-    };
-    </script>
-
     <div class="container_">
         <h3 class="mytitle">Liste des utilisateurs</h3>
         <div class="col-md-12">

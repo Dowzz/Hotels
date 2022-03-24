@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mon établissement</title>
-
     <?php 
-   
+    include('./style/style.php');
     include('./Db/connect.php');
     error_reporting(1);
     session_start();
@@ -26,80 +17,61 @@
     <h3 class="mytitle"><?= $data['nom']?></h3>
     <input name="etabId" type="hidden" value=<?= $data['etabId']?>>
     <h4 class="mytitle"> <?= $data['adresse']?> <?= $data['ville']?></h4>
-</head>
+    </head>
 
-<body>
-    <div class="container_ container_register">
-        <div class="row addetabrow">
-            <div class="col-md-12">
-                <div class="login-content">
-                    <div class="section-title"></div>
-                    <form id="ajout_suite" action="mon_établissement" method="post">
-                        <div class="textbox-wrap">
-                            <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-font"></i></span>
-                                <input type='text' required="required" name='titre' value="" class="form-control"
-                                    placeholder="titre de la suite">
+    <body>
+        <div class="container_ container_register">
+            <div class="row addetabrow">
+                <div class="col-md-12">
+                    <div class="login-content">
+                        <div class="section-title"></div>
+                        <form id="ajout_suite" action="mon_établissement" method="post">
+                            <div class="textbox-wrap">
+                                <div class="input-group">
+                                    <span class="input-group-addon "><i class="fa-solid fa-font"></i></span>
+                                    <input type='text' required="required" name='titre' value="" class="form-control"
+                                        placeholder="titre de la suite">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon "><i class="fa-solid fa-link"></i></span>
+                                    <input type='text' required="required" name='image' value="" class="form-control"
+                                        placeholder="lien image">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon "><i class="fa-solid fa-comment"></i></span>
+                                    <input type='text' required="required" name='descriptif' value=""
+                                        class="form-control" placeholder="Descriptif">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon "><i class="fa-solid fa-money-bill"></i></span>
+                                    <input type="text" required="required" value="" name="prix" class="form-control"
+                                        placeholder="Prix">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon "><i class="fa-solid fa-link"></i></span>
+                                    <input type="text" required="required" value="" name="booking" class="form-control"
+                                        placeholder="Lien Booking">
+                                </div>
+                                <input type="hidden" name="etabId" value=<?= $data['etabId']?>>
                             </div>
-                            <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-link"></i></span>
-                                <input type='text' required="required" name='image' value="" class="form-control"
-                                    placeholder="lien image">
+                            <div class="login-btn add-btn">
+                                <input type="submit" name="addsuite" value="Ajouter">
                             </div>
-                            <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-comment"></i></span>
-                                <input type='text' required="required" name='descriptif' value="" class="form-control"
-                                    placeholder="Descriptif">
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-money-bill"></i></span>
-                                <input type="text" required="required" value="" name="prix" class="form-control"
-                                    placeholder="Prix">
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-link"></i></span>
-                                <input type="text" required="required" value="" name="booking" class="form-control"
-                                    placeholder="Lien Booking">
-                            </div>
-                            <input type="hidden" name="etabId" value=<?= $data['etabId']?>>
-                        </div>
-                        <div class="login-btn add-btn">
-                            <input type="submit" name="addsuite" value="Ajouter">
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container_">
+                <div id="mycontainer">
+
                 </div>
             </div>
         </div>
 
-        <div class="container_">
-            <div id="mycontainer">
 
-            </div>
-        </div>
-    </div>
-
-
-</body>
-<script>
-$(document).ready(function() {
-    load_data();
-});
-
-function load_data() {
-    var action = "addsuite";
-    $.ajax({
-        url: "./script/update_etab.php",
-        type: "POST",
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#mycontainer').html(data);
-        }
-    });
-}
-</script>
-<?php
+    </body>
+    <?php
     if (isset($_POST['addsuite'])) {
         $titre = $_POST['titre'];
         $image = $_POST['image'];
@@ -127,8 +99,8 @@ function load_data() {
     ?>
 
 
-<?php
+    <?php
 }
 ?>
 
-</html>
+    </html>
