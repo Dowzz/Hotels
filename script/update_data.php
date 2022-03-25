@@ -21,13 +21,38 @@
     <td><?= $data['name']?></td>
     <td><?= $data['prenom']?></td>
     <td>
-        <form action="ajout_établissement" id="delete" method="post">
-            <input type="hidden" name="etabId" value=<?= $data['etabId']?>>
+        <form action="ajout_établissement" id="deleteetab" method="post">
+            <input type="hidden" id='etabId' name="etabId" value=<?= $data['etabId']?>>
             <input type="submit" id="delgal-btn" name="delEtab" value="Supprimer">
         </form>
     </td>
 </tr>
 
+<script>
+$("#deleteetab").submit(function(e) {
+    e.preventDefault();
+
+    var etabId = document.getElementById("etabId").value;
+    $.ajax({
+        url: "./script/delEtab.php",
+        method: "POST",
+        data: {
+            etabId: etabId,
+            delEtab: 1,
+        },
+        success: function(response) {
+            $("#response").html(response);
+        },
+    });
+    $.ajax({
+        url: "./script/update_data.php",
+        type: "post",
+        success: function(response) {
+            $("#mytable").html(response);
+        },
+    })
+});
+</script>
 <?php
 }
 ?>

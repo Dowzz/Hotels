@@ -12,9 +12,6 @@ if( isset( $_POST['addetabform'])) {
     if($result) {
         exit ('<font color="green">établissement crée !</font>');
     }else 
-        exit ('<font color="red">ce gérant possède deja un établissement</font>');
-  
-    
-    
+        exit ('<font color="red">ce gérant possède deja un établissement</font>');           
 }
 ?>

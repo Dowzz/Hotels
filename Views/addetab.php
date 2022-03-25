@@ -13,6 +13,17 @@
         }
    ?>
 </head>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "./script/update_data.php",
+        type: "post",
+        success: function(response) {
+            $("#mytable").html(response);
+        },
+    });
+});
+</script>
 
 <body>
     <div class="container_ container_register">
@@ -66,7 +77,7 @@
                             </select>
                         </div>
                         <div class="login-btn add-btn">
-                            <input type="submit" name="addetab" value="Ajouter">
+                            <input type="submit" id="updateetab" name="addetab" value="Ajouter">
                         </div>
                 </form>
                 <p id="response"></p>
@@ -109,15 +120,3 @@
 </html>
 
 <?php 
-
-
-if (isset($_POST['delEtab'])) {
-    $etabId = $_POST['etabId'];   
-    $sql= "DELETE FROM etablissement WHERE etabId = $etabId";
-    if (mysqli_query($con, $sql)) {
-        echo "<div class='message'><h3>supprimé</3></div>";
-    }else {
-        echo "<script> alert ('suppresion impossible')</script>";
-};
-}
-?>

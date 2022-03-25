@@ -1,3 +1,5 @@
+// function one page
+
 $(window).on("load", function () {
   $(".content").load("accueil.html");
 });
@@ -14,6 +16,8 @@ $(() => {
       });
     });
   });
+
+  // login ajax
 
   $("#loginform").submit(function (e) {
     e.preventDefault();
@@ -36,6 +40,9 @@ $(() => {
       dataType: "text",
     });
   });
+
+  // ajax ajout établissement
+
   $("#addetabform").submit(function (e) {
     e.preventDefault();
     e.stopImmediatePropagation();
@@ -57,6 +64,13 @@ $(() => {
       },
       success: function (response) {
         $("#response").html(response);
+      },
+    });
+    $.ajax({
+      url: "./script/update_data.php",
+      type: "post",
+      success: function (response) {
+        $("#mytable").html(response);
       },
     });
   });
