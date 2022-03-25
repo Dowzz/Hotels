@@ -12,18 +12,6 @@
         header("location:connexion");
         }
    ?>
-</head>
-<script>
-$(document).ready(function() {
-    $.ajax({
-        url: "./script/update_data.php",
-        type: "post",
-        success: function(response) {
-            $("#mytable").html(response);
-        },
-    });
-});
-</script>
 
 <body>
     <div class="container_ container_register">
@@ -115,7 +103,49 @@ $(document).ready(function() {
             </div>
         </div>
 </body>
-
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "./script/update_data.php",
+        type: "post",
+        success: function(response) {
+            $("#mytable").html(response);
+        },
+    });
+});
+// ajax ajout établissement
+$("#addetabform").submit(function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var nom = document.getElementById("nom").value;
+    var city = document.getElementById("city").value;
+    var address = document.getElementById("address").value;
+    var desc = document.getElementById("desc").value;
+    var userId = document.getElementById("user").value;
+    $.ajax({
+        url: "./script/etabform.php",
+        method: "POST",
+        data: {
+            addetabform: 1,
+            nom: nom,
+            city: city,
+            address: address,
+            desc: desc,
+            userId: userId,
+        },
+        success: function(response) {
+            $("#response").html(response);
+        },
+    });
+    $.ajax({
+        url: "./script/update_data.php",
+        type: "post",
+        success: function(response) {
+            $("#mytable").html(response);
+        },
+    });
+});
+</script>
 
 </html>
 

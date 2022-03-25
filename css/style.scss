@@ -111,13 +111,14 @@ body a {
 
 //button style
 
-#delUser-btn {
+#delUser {
   background-color: rgb(0, 0, 0);
   border: none;
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 5px;
   width: fit-content;
+  color: #f0f0f0;
 }
 .login-btn {
   margin-top: 15px;
@@ -129,15 +130,13 @@ body a {
   margin: auto;
 }
 #upgrade-btn,
-#retro-btn {
+#retro-btn,
+#delgal-btn {
   width: fit-content;
   padding: 10px;
   border-radius: 15px;
 }
 #delgal-btn {
-  width: fit-content;
-  padding: 10px;
-  border-radius: 15px;
   background-color: $red;
 }
 #retro-btn {
@@ -291,16 +290,11 @@ body a {
 .collapsetr {
   display: none;
 }
-.messager {
-  background-color: $font;
-  color: $background;
-  position: fixed;
-  top: 105px;
-
+#alert {
+  color: $font;
   border-radius: 15px;
-  padding: 5px;
-
-  animation: fadein 4s linear 1 normal forwards;
+  text-align: center;
+  animation: fadein 3s linear 1 normal forwards;
 }
 .suite_list {
   margin-top: 30px;

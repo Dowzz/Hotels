@@ -13,9 +13,6 @@ exit();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
     <title>Connexion</title>
     <?php include('./Db/connect.php') ?>
 </head>
@@ -53,6 +50,31 @@ exit();
         <p id="response"></p>
     </div>
 </body>
+
+<script>
+// login ajax
+$("#loginform").submit(function(e) {
+    e.preventDefault();
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    $.ajax({
+        url: "./auth/signin.php",
+        method: "POST",
+        data: {
+            login: 1,
+            email: email,
+            password,
+            password,
+        },
+        success: function(response) {
+            $("#response").html(response);
+
+            if (response.indexOf("redirection") >= 0) window.location.href = "";
+        },
+        dataType: "text",
+    });
+});
+</script>
 
 
 

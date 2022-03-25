@@ -31,7 +31,7 @@
 <script>
 $("#deleteetab").submit(function(e) {
     e.preventDefault();
-
+    e.stopImmediatePropagation();
     var etabId = document.getElementById("etabId").value;
     $.ajax({
         url: "./script/delEtab.php",

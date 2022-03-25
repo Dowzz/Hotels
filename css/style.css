@@ -121,7 +121,7 @@ body a {
   background: silver;
 }
 
-#delUser-btn {
+#delUser {
   background-color: black;
   border: none;
   border-radius: 15px;
@@ -130,6 +130,7 @@ body a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  color: #f0f0f0;
 }
 
 .login-btn {
@@ -145,7 +146,8 @@ body a {
 }
 
 #upgrade-btn,
-#retro-btn {
+#retro-btn,
+#delgal-btn {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -154,11 +156,6 @@ body a {
 }
 
 #delgal-btn {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 10px;
-  border-radius: 15px;
   background-color: #af4646;
 }
 
@@ -352,15 +349,12 @@ body a {
   display: none;
 }
 
-.messager {
-  background-color: #000000;
-  color: #f0f0f0;
-  position: fixed;
-  top: 105px;
+#alert {
+  color: #000000;
   border-radius: 15px;
-  padding: 5px;
-  -webkit-animation: fadein 4s linear 1 normal forwards;
-          animation: fadein 4s linear 1 normal forwards;
+  text-align: center;
+  -webkit-animation: fadein 3s linear 1 normal forwards;
+          animation: fadein 3s linear 1 normal forwards;
 }
 
 .suite_list {
