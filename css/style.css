@@ -97,15 +97,12 @@ body a {
 
 #mytable {
   padding: 10px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .table > tbody > tr > td,
 .table > tfoot > tr > td,
 .table > thead > tr > td {
-  width: 200px;
+  width: 100px;
   border-top: none;
   text-align: center;
   margin-top: 15px;
@@ -115,10 +112,16 @@ body a {
 .table > tfoot > tr > th,
 .table > thead > tr > th {
   text-align: center;
+  font-style: italic;
 }
 
 .table > tbody > tr:nth-child(odd) {
   background: silver;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 0;
 }
 
 #delUser {
@@ -145,14 +148,24 @@ body a {
   margin: auto;
 }
 
-#upgrade-btn,
-#retro-btn,
+#promoteUser,
+#demoteUser,
 #delgal-btn {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 10px;
   border-radius: 15px;
+}
+
+#promoteUser {
+  background-color: darkgreen;
+  color: #f0f0f0;
+}
+
+#demoteUser {
+  background-color: darkred;
+  color: #f0f0f0;
 }
 
 #delgal-btn {
@@ -324,6 +337,11 @@ body a {
   margin: auto;
 }
 
+label {
+  margin-right: 15px;
+  padding-top: 5px;
+}
+
 #response {
   text-align: center;
   font-weight: bolder;
@@ -350,33 +368,14 @@ body a {
 }
 
 #alert {
+  background-color: #3564ff;
   color: #000000;
   border-radius: 15px;
   text-align: center;
-  -webkit-animation: fadein 3s linear 1 normal forwards;
-          animation: fadein 3s linear 1 normal forwards;
 }
 
 .suite_list {
   margin-top: 30px;
-}
-
-@-webkit-keyframes fadein {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 @media only screen and (max-width: 796px) {
