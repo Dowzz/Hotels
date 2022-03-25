@@ -2,7 +2,13 @@
 <html lang="fr">
 <?php include('./layout/navbar.php');
  include('./style/style.php');
- include('./Db/connect.php') ?>
+ include('./Db/connect.php');
+ session_start();
+if (isset ($_SESSION['loggedIn'])) {
+header('Location: accueil');
+exit();
+}
+  ?>
 
 <head>
     <meta charset="UTF-8">

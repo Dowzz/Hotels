@@ -7,7 +7,7 @@ if (isset($_POST['delEtab'])) {
     if (mysqli_query($con, $sql)) {
         echo "<h3>supprimé</3>";
     }else {
-        echo "<script> alert ('suppresion impossible')</script>";
+        echo "<script> alert ('suppression impossible')</script>";
 };
 }
 ?>
