@@ -1,4 +1,3 @@
-<h3 class="mytitle">Liste des utilisateurs</h3>
 <p id="alert"></p>
 <?php 
         include('./style/style.php');
@@ -13,6 +12,7 @@
         }
     ?>
 <div class="container_ container_register">
+    <h3 class="mytitle">Liste des utilisateurs</h3>
     <table class="table">
         <thead>
             <tr>
@@ -25,8 +25,6 @@
             </tr>
         </thead>
         <tbody id="mytbody">
-
-
         </tbody>
     </table>
 </div>
@@ -34,7 +32,7 @@
 //chargement de la page 
 $(document).ready(function() {
     $.ajax({
-        url: "./script/update_role.php",
+        url: "./script/userlist/update_role.php",
         type: "post",
         success: function(response) {
             $("#mytbody").html(response);
@@ -45,7 +43,7 @@ $(document).ready(function() {
 //suppression utilisateur
 function delUser(id) {
     $.ajax({
-        url: "./script/manageUser.php",
+        url: "./script/userlist/manageUser.php",
         method: "post",
         data: {
             userId: id,
@@ -60,7 +58,7 @@ function delUser(id) {
 // upgrade de l'utilisateur
 function upUser(id) {
     $.ajax({
-        url: "./script/manageUser.php",
+        url: "./script/userlist/manageUser.php",
         method: "post",
         data: {
             userId: id,
@@ -75,7 +73,7 @@ function upUser(id) {
 //downgrade de l'utilisateur
 function downUser(id) {
     $.ajax({
-        url: "./script/manageUser.php",
+        url: "./script/userlist/manageUser.php",
         method: "post",
         data: {
             userId: id,

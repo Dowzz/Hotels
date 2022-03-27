@@ -1,17 +1,22 @@
 <?php 
-include('../Db/connect.php');
+include('../../Db/connect.php');
 error_reporting(1);
 session_start();
 $type = $_SESSION['role'];
-    if ($type == "client") {
-       header("location:connexion");
-    } if ($type=="") {
-        header("location:connexion");
-    }
+if ($type == "client") {
+   header("location:connexion");
+} if ($type=="") {
+    header("location:connexion");
+}
+
 $userId = $_SESSION['userid'];
 $sql = "SELECT * FROM etablissement left join suite on etablissement.etabId = suite.etabId where userId = '$userId'" ;
 $rs = mysqli_query($con, $sql);
 while($data = mysqli_fetch_array($rs)) {
+    $suiteId = $data['suiteId'];
+    if (!$suiteId){
+        echo "<h3>pas de suite enregistré</h3>";
+    }else {
 ?>
 
 <div class="panel panel-default">
@@ -35,7 +40,6 @@ while($data = mysqli_fetch_array($rs)) {
                 <?php
         }
         ?>
-
                 <div class="overlay">
                     <a href="#mymodal" id="modal-btn" type="button" data-toggle="modal" data-target="#mymodal"
                         class="middle" data-id="<?php echo $data['suiteId']; ?>">Tout
@@ -50,22 +54,12 @@ while($data = mysqli_fetch_array($rs)) {
         <div class="price">
             <p>Prix pour une nuit : <?= $data['prix'] ?> €</p>
             <a href=<?= $data['booking']?>>liens booking</a>
-            <form action="mon_établissement" id="delete" method="post">
-                <input type="hidden" name="suiteId" value=<?= $data['suiteId']?>>
-                <input type="submit" id="delgal-btn" name="delSuite" value="Supprimer">
-            </form>
+            <button id="delete" type="button" onClick=deletesuite(<?= $data['suiteId']?>)>Supprimer
+            </button>
         </div>
     </div>
 </div>
 <?php 
-if (isset($_POST['delSuite'])) {
-    $suiteId = $_POST['suiteId'];   
-    $sql= "DELETE FROM suite WHERE suiteId = $suiteId";
-    if (mysqli_query($con, $sql)) {
-        echo "<div class='message'><h3>supprimé</3></div>";
-    }else {
-        echo "<script> alert ('suppresion impossible')</script>";
-};
 }
 };
 ?>
@@ -111,4 +105,27 @@ $(document).ready(function() {
         })
     })
 })
+
+function deletesuite(id) {
+    $.ajax({
+        url: "./script/Smanager/manageSuite.php",
+        method: 'POST',
+        data: {
+            suiteId: id,
+            delSuite: 1,
+        },
+        success: function(response) {
+            $('#alert').html(response);
+        }
+    })
+
+    $.ajax({
+        url: "./script/Smanager/update_etab.php",
+        type: "post",
+        success: function(response) {
+            $("#mycontainer").html(response);
+        }
+    })
+
+}
 </script>

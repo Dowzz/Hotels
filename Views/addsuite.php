@@ -11,13 +11,14 @@
     }
     $userId = $_SESSION['userid'];
     $sql = "SELECT * FROM etablissement where userId = '$userId'";
-    $rs = mysqli_query($con, $sql);
-    while($data = mysqli_fetch_array($rs)) {
+    $rs = mysqli_query($con, $sql);    
+    if(mysqli_num_rows($rs) > 0){
+    while($data = mysqli_fetch_array($rs)) {        
     ?>
     <h3 class="mytitle"><?= $data['nom']?></h3>
     <input name="etabId" type="hidden" value=<?= $data['etabId']?>>
     <h4 class="mytitle"> <?= $data['adresse']?> <?= $data['ville']?></h4>
-    </head>
+
 
     <body>
         <div class="container_ container_register">
@@ -29,30 +30,30 @@
                             <div class="textbox-wrap">
                                 <div class="input-group">
                                     <span class="input-group-addon "><i class="fa-solid fa-font"></i></span>
-                                    <input type='text' required="required" name='titre' value="" class="form-control"
-                                        placeholder="titre de la suite">
+                                    <input type='text' required="required" id="titre" name='titre' value=""
+                                        class="form-control" placeholder="titre de la suite">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon "><i class="fa-solid fa-link"></i></span>
-                                    <input type='text' required="required" name='image' value="" class="form-control"
-                                        placeholder="lien image">
+                                    <input type='text' required="required" id="image" name='image' value=""
+                                        class="form-control" placeholder="lien image">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon "><i class="fa-solid fa-comment"></i></span>
-                                    <input type='text' required="required" name='descriptif' value=""
+                                    <input type='text' required="required" id="desc" name='descriptif' value=""
                                         class="form-control" placeholder="Descriptif">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon "><i class="fa-solid fa-money-bill"></i></span>
-                                    <input type="text" required="required" value="" name="prix" class="form-control"
-                                        placeholder="Prix">
+                                    <input type="text" required="required" value="" id="prix" name="prix"
+                                        class="form-control" placeholder="Prix">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon "><i class="fa-solid fa-link"></i></span>
-                                    <input type="text" required="required" value="" name="booking" class="form-control"
-                                        placeholder="Lien Booking">
+                                    <input type="text" required="required" value="" id="booking" name="booking"
+                                        class="form-control" placeholder="Lien Booking">
                                 </div>
-                                <input type="hidden" name="etabId" value=<?= $data['etabId']?>>
+                                <input type="hidden" name="etabId" id="etabId" value=<?= $data['etabId']?>>
                             </div>
                             <div class="login-btn add-btn">
                                 <input type="submit" name="addsuite" value="Ajouter">
@@ -61,46 +62,62 @@
                     </div>
                 </div>
             </div>
-
+            <p id="alert"></p>
             <div class="container_">
-                <div id="mycontainer">
 
+                <div id="mycontainer">
                 </div>
             </div>
         </div>
 
 
     </body>
-    <?php
-    if (isset($_POST['addsuite'])) {
-        $titre = $_POST['titre'];
-        $image = $_POST['image'];
-        $desc = $_POST['descriptif'];
-        $prix = $_POST['prix'];
-        $book = $_POST['booking'];
-        $etabId = $_POST['etabId'];
-        $sql = "INSERT INTO `suite`(`titre`, `image`, `descriptif`, `prix`, `booking`, `etabId`) VALUES ('$titre', '$image', '$desc', '$prix', '$book', '$etabId')";
-        if (mysqli_query($con, $sql)) {
-            echo "<div class='message'><h3>Ajout effectué</3></div>";
-        }else {
-            echo "<script> alert ('ajout suite impossible')</script>";
-        }
-    }
-    if (isset($_POST['delSuite'])) {
-        $suiteId = $_POST['suiteId'];   
-        $sql= "DELETE FROM suite WHERE suiteId = '$suiteId'";
-        if (mysqli_query($con, $sql)) {
-            echo "<div class='message'><h3>supprimé</3></div>";
-        }else {
-            echo "<script> alert ('suppresion impossible')</script>";
-        }
-    }
-    
-    ?>
-
 
     <?php
+    }
+}else {
+    echo "<h3 id='noetab'>pas d'établissement enregistré</h3>";
 }
+
 ?>
 
     </html>
+
+
+    <script>
+$(document).ready(function() {
+    $.ajax({
+        url: "./script/Smanager/update_etab.php",
+        type: "post",
+        success: function(response) {
+            $("#mycontainer").html(response);
+        }
+    })
+})
+$('#ajout_suite').submit(function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    var titre = document.getElementById("titre").value;
+    var image = document.getElementById("image").value;
+    var desc = document.getElementById("desc").value;
+    var prix = document.getElementById("prix").value;
+    var book = document.getElementById("booking").value;
+    var etabId = document.getElementById('etabId').value
+    $.ajax({
+        url: "./script/Smanager/manageSuite.php",
+        method: "post",
+        data: {
+            addsuite: 1,
+            titre: titre,
+            image: image,
+            desc: desc,
+            prix: prix,
+            book: book,
+            etabId: etabId,
+        },
+        success: function(response) {
+            $('#alert').html(response)
+        }
+    })
+})
+    </script>

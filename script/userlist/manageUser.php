@@ -1,5 +1,5 @@
 <?php 
-    include('../Db/connect.php');
+    include('../../Db/connect.php');
     error_reporting(1);
     session_start();
     if (isset($_POST['delUser'])) {
@@ -33,7 +33,7 @@
     ?>
 <script>
 $.ajax({
-    url: "./script/update_role.php",
+    url: "./script/userlist/update_role.php",
     type: "post",
     success: function(response) {
         $("#mytbody").html(response);

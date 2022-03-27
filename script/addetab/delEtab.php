@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../Db/connect.php';
+require '../../Db/connect.php';
 if (isset($_POST['delEtab'])) {
     $etabId = $_POST['etabId'];   
     $sql= "DELETE FROM etablissement WHERE etabId = $etabId";
@@ -11,3 +11,12 @@ if (isset($_POST['delEtab'])) {
 };
 }
 ?>
+<script>
+$.ajax({
+    url: "./script/addetab/update_data.php",
+    type: "post",
+    success: function(response) {
+        $("#mytable").html(response);
+    },
+})
+</script>

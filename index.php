@@ -1,4 +1,5 @@
 <?php
+include('./style/style.php');
 
 $url = '';
 if(isset($_GET['url'])) {
@@ -18,6 +19,6 @@ require './auth/logout.php';
 require './Views/addetab.php';
 } elseif ($url == 'listing_utilisateur') {
 require './Views/userlist.php';
-} elseif ($url == 'mon_établissement') {
+} elseif ($url == 'mon_etablissement') {
 require './Views/addsuite.php';
 }

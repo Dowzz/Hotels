@@ -1,5 +1,5 @@
 <?php
-include('../Db/connect.php');
+include('../../Db/connect.php');
 $sql = "SELECT * FROM utilisateur where role <> 'admin'";
 $rs = mysqli_query($con, $sql);
 while($data = mysqli_fetch_array($rs)) {

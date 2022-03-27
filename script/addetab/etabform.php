@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../Db/connect.php';
+require '../../Db/connect.php';
 if( isset( $_POST['addetabform'])) {
     $nom = $_POST['nom'];
     $city = $_POST['city'];
@@ -10,8 +10,8 @@ if( isset( $_POST['addetabform'])) {
     $request="INSERT INTO `etablissement`(`nom`, `ville`, `adresse`, `description`, `userId`) VALUES ('$nom', '$city', '$address', '$desc', '$userId')";
     $result = mysqli_query($con, $request);
     if($result) {
-        exit ('<font color="green">établissement crée !</font>');
+        exit ('<h3>établissement crée !</h3>');
     }else 
-        exit ('<font color="red">ce gérant possède deja un établissement</font>');           
+        exit ('<h3>ce gérant possède deja un établissement</3>');           
 }
 ?>

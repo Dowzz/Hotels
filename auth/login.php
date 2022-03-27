@@ -47,7 +47,7 @@ exit();
         </div>
     </div>
     <div>
-        <p id="response"></p>
+        <p id="alert"></p>
     </div>
 </body>
 
@@ -67,7 +67,7 @@ $("#loginform").submit(function(e) {
             password,
         },
         success: function(response) {
-            $("#response").html(response);
+            $("#alert").html(response);
 
             if (response.indexOf("redirection") >= 0) window.location.href = "";
         },

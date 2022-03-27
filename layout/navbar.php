@@ -11,6 +11,7 @@
                 error_reporting(1);
                 session_start();
                 $type = $_SESSION['role'];
+             
 
                 if ($type == "admin") {
                     echo '
@@ -27,7 +28,7 @@
                 } 
                 if ($type == "gérant") {
                     echo '
-                        <li class="nav-item"><a class="nav-link navlink" href="mon_établissement" onclick="remove(href)">Mon établissement</a></li>
+                        <li class="nav-item"><a class="nav-link navlink" href="mon_etablissement" onclick="remove(href)">Mon etablissement</a></li>
                         <li class="nav-item"><a class="nav-link" href="deconnexion">Déconnexion</a></li>
                         ';
 

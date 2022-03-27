@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php 
         include('./layout/navbar.php');
-        include('./style/style.php');
+        
     ?>
     <title>Accueil</title>
 </head>

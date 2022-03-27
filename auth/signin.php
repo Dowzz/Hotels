@@ -24,8 +24,8 @@ if (isset($_POST['login'])) {
         $_SESSION['nom'] = $nom;
         $_SESSION['prenom'] = $prenom;
         
-       exit('<font color="green">Connexion Réussie, redirection....</font>');
+       exit('<h3>Connexion Réussie, redirection....</h3>');
     } else {
-       exit('<font color="red">Vérifiez vos identifiants et mot de passe</font>');
+       exit('<font color="red"><h3>Vérifiez vos identifiants et mot de passe</h3></font>');
     }
 }

@@ -105,7 +105,7 @@ body a {
   text-align: center;
   font-style: italic;
 }
-.table > tbody > tr:nth-child(odd) {
+tbody > tr:nth-child(odd) {
   background: silver;
 }
 .table td {
@@ -135,10 +135,11 @@ body a {
 }
 #promoteUser,
 #demoteUser,
-#delgal-btn {
+#deleteetab {
   width: fit-content;
   padding: 10px;
   border-radius: 15px;
+  border: none;
 }
 #promoteUser {
   background-color: darkgreen;
@@ -148,8 +149,11 @@ body a {
   background-color: darkred;
   color: $background;
 }
-#delgal-btn {
+#deleteetab {
   background-color: $red;
+  padding-top: 10px;
+  color: $background;
+  margin-bottom: 5px;
 }
 #retro-btn {
   background-color: $red;
@@ -283,6 +287,15 @@ body a {
 
 // Divers style
 
+#mycontainer h3,
+#noetab {
+  text-align: center;
+}
+
+#etabId {
+  margin-bottom: 0;
+}
+
 label {
   margin-right: 15px;
   padding-top: 5px;
@@ -291,7 +304,7 @@ label {
 #response {
   text-align: center;
   font-weight: bolder;
-  background-color: $background;
+  background-color: $red;
   padding: 5px;
 }
 
@@ -309,7 +322,7 @@ label {
 }
 #alert {
   background-color: $blue;
-  color: $font;
+  color: $background;
   border-radius: 15px;
   text-align: center;
 }
