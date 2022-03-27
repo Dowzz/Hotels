@@ -1,5 +1,5 @@
 <?php
-include('../Db/connect.php');
+include('../../Db/connect.php');
 if (isset($_POST['addsuite'])) {
 $titre = $_POST['titre'];
 $image = $_POST['image'];
@@ -28,5 +28,13 @@ if (isset($_POST['delSuite'])) {
         echo "<script> alert ('suppresion impossible')</script>";
 };
 }
-
 ?>
+<script>
+$.ajax({
+    url: "./script/Smanager/update_etab.php",
+    type: "post",
+    success: function(response) {
+        $("#mycontainer").html(response);
+    }
+})
+</script>

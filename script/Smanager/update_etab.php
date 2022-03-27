@@ -22,21 +22,19 @@ while($data = mysqli_fetch_array($rs)) {
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="gallery">
-            <div class="image_default">
 
+            <div class="image_default">
                 <img class="showcase" src=<?= $data['image']?> alt="">
             </div>
-            <div class="thumbsnail_list">
 
+            <div class="thumbsnail_list">
                 <?php
         $suiteId = $data['suiteId'];
         $request = "SELECT * FROM imagegal WHERE suiteId = '$suiteId'";
         $result = mysqli_query($con, $request);
         while($value = mysqli_fetch_array($result)) {
         ?>
-
                 <img class="thumb" src=<?= $value['link']?>>
-
                 <?php
         }
         ?>
@@ -117,15 +115,7 @@ function deletesuite(id) {
         success: function(response) {
             $('#alert').html(response);
         }
-    })
 
-    $.ajax({
-        url: "./script/Smanager/update_etab.php",
-        type: "post",
-        success: function(response) {
-            $("#mycontainer").html(response);
-        }
-    })
 
+    })
 }
-</script>
