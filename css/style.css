@@ -140,6 +140,10 @@ tbody > tr:nth-child(odd) {
   margin-top: 15px;
 }
 
+.mybutton {
+  border-radius: 15px;
+}
+
 .input-group {
   width: 100%;
 }
@@ -193,6 +197,20 @@ tbody > tr:nth-child(odd) {
   font-size: 2em;
 }
 
+#addimage,
+#lien {
+  width: 50%;
+}
+
+.addimg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 #carousel {
   height: 600px;
   width: 100%;
@@ -202,28 +220,33 @@ tbody > tr:nth-child(odd) {
 .carousel-item img {
   width: 100%;
   border-radius: 15px;
+  height: auto;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #000000;
   border-radius: 15px;
-  padding: 15px;
+  padding: 25px;
 }
 
 .modal-body {
-  height: 480px;
+  height: 600px;
   overflow: hidden;
-  border-radius: 15px;
 }
 
 .modal-content {
   border-radius: 15px;
-  background-color: #f0f0f0;
+  background-color: transparent;
 }
 
 .modal-header {
   padding: 0;
+}
+
+#close {
+  font-size: xxx-large;
+  color: #f0f0f0;
 }
 
 .panel {
@@ -256,11 +279,6 @@ tbody > tr:nth-child(odd) {
   margin-right: 10px;
   height: auto;
   border-radius: 15px;
-}
-
-.panel-title,
-.panel-text {
-  margin-left: 50px;
 }
 
 .showcase {
@@ -382,6 +400,7 @@ label {
   color: #f0f0f0;
   border-radius: 15px;
   text-align: center;
+  width: 100%;
 }
 
 .suite_list {

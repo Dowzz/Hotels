@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php include('./layout/navbar.php');
+<?php
  include('./style/style.php');
 session_start();
 if (isset ($_SESSION['loggedIn'])) {
@@ -39,7 +39,7 @@ exit();
                             </div>
                         </div>
                         <div class="login-btn">
-                            <input type="submit" name="login" value="Connexion">
+                            <input class="mybutton" type="submit" name="login" value="Connexion">
                         </div>
                     </form>
                 </div>
@@ -75,7 +75,5 @@ $("#loginform").submit(function(e) {
     });
 });
 </script>
-
-
 
 </html>

@@ -48,8 +48,14 @@ while($data = mysqli_fetch_array($rs)) {
         <div class="details">
             <h3 class="panel-title"><?= $data['titre'] ?></h3>
             <p class="panel-text"><?= $data['descriptif'] ?></p>
+            <div class="addimg">
+                <input type="text" id="lien" placeholder="ajouter un lien vers une image" required="required"
+                    name="image" value="">
+                <input id="addimage" class="mybutton" type="submit" onClick=addimage(<?= $suiteId ?>)
+                    value="Ajouter"></input>
+            </div>
         </div>
-        <div class="price">
+        <div class=" price">
             <p>Prix pour une nuit : <?= $data['prix'] ?> €</p>
             <a href=<?= $data['booking']?>>liens booking</a>
             <button id="delete" type="button" onClick=deletesuite(<?= $data['suiteId']?>)>Supprimer
@@ -57,15 +63,18 @@ while($data = mysqli_fetch_array($rs)) {
         </div>
     </div>
 </div>
+</div>
 <?php 
 }
 };
 ?>
 <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-            </div>
+            <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
             <div class="modal-body">
                 <div class="container_">
                     <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
@@ -93,9 +102,10 @@ $('.caroussel').carousel({
 $(document).ready(function() {
     $('#mymodal').on('show.bs.modal', function(e) {
         var rowid = $(e.relatedTarget).data('id');
+        console.log(rowid);
         $.ajax({
             type: 'post',
-            url: './script/fetch_record.php',
+            url: './script/Smanager/fetch_record.php',
             data: 'rowid=' + rowid,
             success: function(data) {
                 $('.fetched-data').html(data);
@@ -117,5 +127,21 @@ function deletesuite(id) {
         }
 
 
+    })
+}
+
+function addimage(id) {
+    lien = document.getElementById('lien').value
+    $.ajax({
+        url: "./script/Smanager/manageSuite.php",
+        method: 'POST',
+        data: {
+            lien: lien,
+            suiteId: id,
+            addimage: 1,
+        },
+        success: function(response) {
+            $('#alert').html(response);
+        }
     })
 }

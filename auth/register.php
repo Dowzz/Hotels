@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php include('./layout/navbar.php');
+<?php 
  include('./style/style.php');
  include('./Db/connect.php');
  session_start();
@@ -25,25 +25,25 @@ exit();
         <div class="row registerrow">
             <div class="col-sm-6">
                 <div class="login-content">
-                    <form action="devenir_client" method="post">
+                    <form id="registerform" action="devenir_client" method="post">
                         <div class="section-title">
                             <h3 class="mytitle">Devenez Client</h3>
                         </div>
                         <div class="textbox-wrap">
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
-                                <input type='text' required="required" name='nom' value="" class="form-control"
+                                <input type='text' required="required" id="nom" name='nom' value="" class="form-control"
                                     placeholder="Nom">
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
-                                <input type='text' required="required" name='prenom' value="" class="form-control"
-                                    placeholder="Prenom">
+                                <input type='text' required="required" id="prenom" name='prenom' value=""
+                                    class="form-control" placeholder="Prenom">
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa-solid fa-at"></i></span>
-                                <input type='email' required="required" name='email' value="" class="form-control"
-                                    placeholder="Email">
+                                <input type='email' required="required" id="email" name='email' value=""
+                                    class="form-control" placeholder="Email">
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa-solid fa-lock"></i></span>
@@ -58,11 +58,10 @@ exit();
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     id="confirmPassword" required="required" value="" name="confirmpassword"
                                     class="form-control" placeholder="confirmation du Password">
-                                <input type="hidden" name="role" value="client">
                             </div>
                         </div>
                         <div class="login-btn">
-                            <input type="submit" name="register" value="Inscription">
+                            <input class="mybutton" type="submit" name="register" value="Inscription">
                         </div>
                         <div id="message">
                             <h5>Le password doit contenir : </h5>
@@ -76,6 +75,7 @@ exit();
                         </div>
                     </form>
                 </div>
+                <div id="alert"></div>
             </div>
             <script>
             var myInput = document.getElementById("psw");
@@ -153,33 +153,39 @@ exit();
                     match.classList.add("invalid");
                 }
             }
+            $('#registerform').submit(function(e) {
+                e.preventDefault();
+                var nom = document.getElementById('nom').value;
+                var prenom = document.getElementById('prenom').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('psw').value;
+                var role = "client";
+                $.ajax({
+                    url: "./auth/signup.php",
+                    method: "POST",
+                    data: {
+                        register: 1,
+                        nom: nom,
+                        prenom: prenom,
+                        email: email,
+                        password: password,
+                        role: role,
+                    },
+                    success: function(response) {
+                        $("#alert").html(response);
+                    },
+                    dataType: "text",
+                });
+
+            })
             </script>
 
         </div>
     </div>
 
 </body>
+<script>
 
+</script>
 
 </html>
-<?php
-if (isset($_POST['register'])) {
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $confirmpasword = $_POST['confirmpassword'];
-    $role = $_POST['role'];
-    $sql = "INSERT INTO `utilisateur`(`name`, `prenom`, `email`, `password`, `role`) VALUES ('$nom', '$prenom', '$email','$hashed_password', '$role')";
-    
-    if (mysqli_query($con, $sql)) {
-        echo "<script> alert (\"Inscription réussi ! vous allez etre redirigé vers l'espace de connexion...\")</script>";
-        echo "<script>window.location.href='connexion';</script>";
-    } else {
-        echo "<script> alert ('Inscription Impossible')</script>";
-    }
-};
-
-
-?>

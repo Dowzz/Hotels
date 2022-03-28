@@ -63,7 +63,7 @@ header("location:connexion");
                         </select>
                     </div>
                     <div class="login-btn add-btn">
-                        <input type="submit" id="updateetab" name="addetab" value="Ajouter">
+                        <input class="mybutton" type="submit" id="updateetab" name="addetab" value="Ajouter">
                     </div>
             </form>
             <p id="alert"></p>

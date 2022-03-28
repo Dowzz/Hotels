@@ -1,5 +1,5 @@
 <?php
-include('../Db/connect.php');
+include('../../Db/connect.php');
 if($_POST['rowid']) {
     $id = $_POST['rowid'];
     $sql = "SELECT * FROM suite WHERE suiteId = '$id'";

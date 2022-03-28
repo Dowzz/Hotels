@@ -56,7 +56,7 @@
                                 <input type="hidden" name="etabId" id="etabId" value=<?= $data['etabId']?>>
                             </div>
                             <div class="login-btn add-btn">
-                                <input type="submit" name="addsuite" value="Ajouter">
+                                <input class="mybutton" type="submit" name="addsuite" value="Ajouter">
                             </div>
                         </form>
                     </div>

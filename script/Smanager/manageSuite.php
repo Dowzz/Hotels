@@ -28,6 +28,19 @@ if (isset($_POST['delSuite'])) {
         echo "<script> alert ('suppresion impossible')</script>";
 };
 }
+if (isset ($_POST['addimage'])) {
+    $lien = $_POST['lien'];
+    $suiteId = $_POST['suiteId'];
+    $sql = "INSERT INTO `imagegal` (`link`, `suiteId`) VALUES ('$lien', '$suiteId')";
+    $rs = mysqli_query($con, $sql);
+    if ($rs) {
+        echo"<h3>Ajout effectué !</h3>";
+    }else {
+        echo "<h3> Ajout impossible</h3>";
+    }
+
+
+}
 ?>
 <script>
 $.ajax({
