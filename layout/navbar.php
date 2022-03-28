@@ -45,12 +45,3 @@
     </div>
     <div class="clearfix"> </div>
 </nav>
-<script>
-function remove(id) {
-    if (id === (document.getElementById(id))) {
-        return
-    } else {
-        $('.content').removeClass('detract');
-    }
-}
-</script>

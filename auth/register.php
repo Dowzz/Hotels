@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php 
- include('./style/style.php');
  include('./Db/connect.php');
  session_start();
 if (isset ($_SESSION['loggedIn'])) {

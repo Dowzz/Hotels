@@ -1,7 +1,7 @@
 // function one page
 
 $(window).on("load", function () {
-  $(".content").load("accueil.html");
+  $(".content").load("./Views/vitrine.php");
 });
 $(() => {
   $(function () {

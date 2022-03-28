@@ -59,8 +59,11 @@ body a {
 }
 
 .welcome {
-  margin-left: 20px;
+  font-family: "Hurricane", cursive;
+  margin-bottom: 50px;
   text-align: center;
+  font-size: 5em;
+  background-color: #f0f0f0;
 }
 
 .container-register {
@@ -150,6 +153,11 @@ tbody > tr:nth-child(odd) {
 
 .input-group-addon {
   margin: auto;
+}
+
+.reservation {
+  text-align: center;
+  margin-top: 15px;
 }
 
 #promoteUser,
@@ -269,6 +277,11 @@ tbody > tr:nth-child(odd) {
   height: 200px;
 }
 
+.panel-text {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 .gallery {
   display: -ms-grid;
   display: grid;
@@ -354,6 +367,23 @@ tbody > tr:nth-child(odd) {
 .price {
   text-align: center;
   margin: auto;
+}
+
+.price p {
+  margin: 15px 0;
+}
+
+.price a {
+  margin: 10px 0;
+}
+
+.container_vitrine {
+  margin-left: inherit;
+  margin-right: inherit;
+  width: 60%;
+  background-color: inherit;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #mycontainer h3,
