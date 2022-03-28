@@ -345,6 +345,11 @@ label {
 
 // media screen
 
+@media only screen and (max-width: 1330px) {
+  body {
+    font-size: small;
+  }
+}
 @media only screen and (max-width: 796px) {
   .table td,
   .table th {
