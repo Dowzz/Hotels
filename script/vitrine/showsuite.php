@@ -4,7 +4,21 @@ error_reporting(1);
 session_start();
 if (isset($_POST['showSuite'])) {
 $etabId = $_POST['id'];
-$sql = "SELECT * FROM etablissement left join suite on etablissement.etabId = suite.etabId where etablissement.etabId = '$etabId'" ;
+$request = "SELECT * FROM etablissement where etabId = '$etabId'";
+$rs = mysqli_query($con, $request)or die(mysqli_error($con));
+while($data = mysqli_fetch_array($rs)) {
+    ?>
+<div id="vitrineInfos">
+    <h4 id="nomHotel"><?= $data['nom']?> : <?= $data['description']?></h4>
+    <p><?= $data['adresse']?></p>
+    <p><?= $data['ville']?></p>
+</div>
+<?php
+}
+
+
+$sql = "SELECT * FROM etablissement left join suite on etablissement.etabId = suite.etabId where etablissement.etabId =
+'$etabId'" ;
 $rs = mysqli_query($con, $sql)or die(mysqli_error($con));
 while($data = mysqli_fetch_array($rs)) {
 $suiteId = $data['suiteId'];

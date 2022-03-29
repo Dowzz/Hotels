@@ -325,7 +325,8 @@ tbody > tr:nth-child(odd) {
 }
 
 #listContainer {
-  border: 1px solid $font;
+  background-color: $background;
+  border: 1px solid $border;
   box-shadow: 10px 5px 5px black;
   width: 75%;
   margin: auto;
@@ -337,7 +338,21 @@ tbody > tr:nth-child(odd) {
   a {
     text-decoration: none;
     font-size: 1.5em;
+    padding: 5px;
+    border-radius: 15px;
   }
+  a:hover {
+    background-color: $blue;
+    color: $background;
+  }
+}
+#nomHotel {
+  text-align: center;
+  color: $blue;
+}
+#vitrineInfos p {
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 // Divers style

@@ -387,7 +387,8 @@ tbody > tr:nth-child(odd) {
 }
 
 #listContainer {
-  border: 1px solid #000000;
+  background-color: #f0f0f0;
+  border: 1px solid lightgray;
   -webkit-box-shadow: 10px 5px 5px black;
           box-shadow: 10px 5px 5px black;
   width: 75%;
@@ -404,6 +405,23 @@ tbody > tr:nth-child(odd) {
 #listContainer a {
   text-decoration: none;
   font-size: 1.5em;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+#listContainer a:hover {
+  background-color: #3564ff;
+  color: #f0f0f0;
+}
+
+#nomHotel {
+  text-align: center;
+  color: #3564ff;
+}
+
+#vitrineInfos p {
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 #mycontainer h3,
