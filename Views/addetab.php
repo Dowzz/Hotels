@@ -7,7 +7,7 @@ error_reporting(1);
 session_start();
 $type = $_SESSION['role'];
 if ($type == "client") {
-    eader("location:connexion");
+    header("location:connexion");
 } if ($type=="") {
 header("location:connexion");
 }

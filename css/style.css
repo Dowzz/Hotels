@@ -277,7 +277,8 @@ tbody > tr:nth-child(odd) {
   height: 200px;
 }
 
-.panel-text {
+.panel-text,
+.panel-title {
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -303,6 +304,7 @@ tbody > tr:nth-child(odd) {
 }
 
 .thumbsnail_list {
+  text-align: center;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -378,12 +380,30 @@ tbody > tr:nth-child(odd) {
 }
 
 .container_vitrine {
-  margin-left: inherit;
-  margin-right: inherit;
   width: 60%;
   background-color: inherit;
   margin-left: auto;
   margin-right: auto;
+}
+
+#listContainer {
+  border: 1px solid #000000;
+  -webkit-box-shadow: 10px 5px 5px black;
+          box-shadow: 10px 5px 5px black;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+  text-align: center;
+}
+
+#listContainer a {
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 #mycontainer h3,

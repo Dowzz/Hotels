@@ -1,51 +1,61 @@
-<div class=" container_vitrine">
-    <div id="mycontainer">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="gallery">
-                    <div class="image_default">
-                        <img class="showcase" src=<?= $data['image']?> alt="">
-                    </div>
-                    <div class="thumbsnail_list">
-                        <?php
+<?php 
+include('../../Db/connect.php');
+error_reporting(1);
+session_start();
+if (isset($_POST['showSuite'])) {
+$etabId = $_POST['id'];
+$sql = "SELECT * FROM etablissement left join suite on etablissement.etabId = suite.etabId where etablissement.etabId = '$etabId'" ;
+$rs = mysqli_query($con, $sql)or die(mysqli_error($con));
+while($data = mysqli_fetch_array($rs)) {
+$suiteId = $data['suiteId'];
+if (!$suiteId){
+echo "<h3 style='text-align: center;'>pas de suite enregistré</h3>";
+}else {
+?>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="gallery">
+
+            <div class="image_default">
+                <img class="showcase" src=<?= $data['image']?> alt="">
+            </div>
+
+            <div class="thumbsnail_list">
+                <?php
         $suiteId = $data['suiteId'];
         $request = "SELECT * FROM imagegal WHERE suiteId = '$suiteId'";
         $result = mysqli_query($con, $request);
         while($value = mysqli_fetch_array($result)) {
         ?>
-                        <img class="thumb" src=<?= $value['link']?>>
-                        <?php
+                <img class="thumb" src=<?= $value['link']?>>
+                <?php
         }
         ?>
-                        <div class="overlay">
-                            <a href="#mymodal" id="modal-btn" type="button" data-toggle="modal" data-target="#mymodal"
-                                class="middle" data-id="<?php echo $data['suiteId']; ?>">Tout
-                                voir</a>
-                        </div>
-                    </div>
+                <div class="overlay">
+                    <a href="#mymodal" id="modal-btn" type="button" data-toggle="modal" data-target="#mymodal"
+                        class="middle" data-id="<?php echo $data['suiteId']; ?>">Tout
+                        voir</a>
                 </div>
-                <div class="details">
-                    <h3 class="panel-title"><?= $data['titre'] ?></h3>
-                    <p class="panel-text"><?= $data['descriptif'] ?></p>
-
-
-
-                </div>
-                <div class=" price">
-                    <p>Prix pour une nuit : <?= $data['prix'] ?> €</p>
-                    <a href=<?= $data['booking']?>>liens booking</a>
-                    <div class="reservation"> <button id="promoteUser" type="button">Reserver
-                        </button>
-                    </div>
-                </div>
-
-
+            </div>
+        </div>
+        <div class="details">
+            <h3 class="panel-title"><?= $data['titre'] ?></h3>
+            <p class="panel-text"><?= $data['descriptif'] ?></p>
+        </div>
+        <div class=" price">
+            <p>Prix pour une nuit : <?= $data['prix'] ?> €</p>
+            <a href=<?= $data['booking']?>>liens booking</a>
+            <div class="login-btn">
+                <input class="mybutton reservation" type="submit" value="Reserver">
+                </input>
             </div>
         </div>
     </div>
 </div>
-
-<?php 
+</div>
+<?php
+    }
+}
 }
 ?>
 <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-hidden="true">
