@@ -21,4 +21,6 @@ require './Views/addetab.php';
 require './Views/userlist.php';
 } elseif ($url == 'mon_etablissement') {
 require './Views/addsuite.php';
+} elseif ($url == "reservation") {
+require './Views/reservation.php';
 }
