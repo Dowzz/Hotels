@@ -60,8 +60,8 @@ echo "<h3 style='text-align: center;'>pas de suite enregistré</h3>";
             <p>Prix pour une nuit : <?= $data['prix'] ?> €</p>
             <a href=<?= $data['booking']?>>liens booking</a>
             <div class="login-btn">
-                <input class="mybutton reservation" type="submit" value="Reserver">
-                </input>
+                <a class="nav-link navlink" href="reservation">Reserver</a>
+                <?php $_SESSION['suiteId'] = $suiteId; ?>
             </div>
         </div>
     </div>
@@ -117,4 +117,16 @@ $(document).ready(function() {
         })
     })
 })
+$(function() {
+    $(document.getElementsByClassName("navlink")).click(function(e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        url = this.href;
+        $.get(url, function(data) {
+            $(".content").html("");
+            $(".content").addClass("detract");
+            $(".content").html(data);
+        });
+    });
+});
 </script>
