@@ -140,6 +140,10 @@ tbody > tr:nth-child(odd) {
   padding: 0;
 }
 
+.tbodyres tr td {
+  padding: 10px;
+}
+
 #delUser {
   background-color: black;
   border: none;
@@ -465,6 +469,10 @@ tbody > tr:nth-child(odd) {
 #reservation_grid p {
   margin-bottom: 10px;
   font-size: 1.3em;
+}
+
+#mes_reservations {
+  text-align: center;
 }
 
 #mycontainer h3,

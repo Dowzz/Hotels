@@ -126,6 +126,9 @@ tbody > tr:nth-child(odd) {
   vertical-align: middle;
   padding: 0;
 }
+.tbodyres tr td {
+  padding: 10px;
+}
 
 //button style
 
@@ -393,7 +396,9 @@ tbody > tr:nth-child(odd) {
 }
 
 // Divers style
-
+#mes_reservations {
+  text-align: center;
+}
 #mycontainer h3,
 #noetab {
   text-align: center;

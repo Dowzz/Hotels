@@ -7,7 +7,6 @@ while($data = mysqli_fetch_array($rs)) {
 <tr>
     <td>
         <button id="delUser" type="button" onClick=delUser(<?= $data['userId']?>)>supprimer</button>
-        </form>
     </td>
     <td><?= $data['name']?></td>
     <td><?= $data['prenom']?></td>
