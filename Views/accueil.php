@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <h3 class="welcome">Bienvenue <?php echo $nom ?> <?php echo $prenom ?> </h3>
+
     <div>
         <div class="content">
 

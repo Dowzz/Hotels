@@ -11,7 +11,7 @@ $sql = "SELECT * FROM etablissement" ;
 $rs = mysqli_query($con, $sql);
 while($data = mysqli_fetch_array($rs)) {
 ?>
-    <div>
+    <div class="navhotel">
         <a class="etab_link" href="#"
             onClick=affichageInfos(<?= $data['etabId']?>)><?=$data['nom']?></a><?= $data['ville']?>
     </div>
@@ -26,7 +26,21 @@ while($data = mysqli_fetch_array($rs)) {
 </div>
 
 <script>
+$(document).ready(function() {
+    $.ajax({
+        url: "./script/vitrine/showsuite.php",
+        type: "post",
+        data: {
+            start: 1,
+        },
+        success: function(response) {
+            $("#vitrineSuite").html(response);
+        },
+    });
+});
+
 function affichageInfos(id) {
+    $("#vitrineSuite").html('');
     $.ajax({
         url: "./script/vitrine/showsuite.php",
         type: "POST",

@@ -47,6 +47,9 @@ body a {
   margin-left: 15px;
   color: $font;
 }
+.groupement:hover {
+  color: $blue;
+}
 .navbar-toggler {
   border: none;
   position: absolute;
@@ -56,16 +59,24 @@ body a {
   position: absolute;
   right: 30px;
 }
+.nav-item:hover {
+  border-radius: 10px;
+  background-color: $blue;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $background;
+}
 
 //Container style
 
 .welcome {
   font-family: "Hurricane", cursive;
-  margin-bottom: 50px;
+  color: $blue;
   text-align: center;
   font-size: 5em;
   background-color: $background;
 }
+
 .container-register {
   justify-content: center;
 }
@@ -198,6 +209,7 @@ tbody > tr:nth-child(odd) {
   width: 100%;
   border-radius: 15px;
   height: auto;
+  margin-top: 15px;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -213,13 +225,10 @@ tbody > tr:nth-child(odd) {
 .modal-content {
   border-radius: 15px;
   background-color: transparent;
+  border: none;
 }
 .modal-header {
   padding: 0;
-}
-#close {
-  font-size: xxx-large;
-  color: #f0f0f0;
 }
 
 //panel style
@@ -243,6 +252,9 @@ tbody > tr:nth-child(odd) {
 .panel-title {
   margin-left: 15px;
   margin-right: 15px;
+}
+.panel-title {
+  color: $blue;
 }
 
 .gallery {
@@ -315,6 +327,11 @@ tbody > tr:nth-child(odd) {
 .price a {
   margin: 10px 0;
 }
+#reservation {
+  background-color: $blue;
+  color: $background;
+  border-radius: 15px;
+}
 
 //Content vitrine modif
 .container_vitrine {
@@ -331,7 +348,7 @@ tbody > tr:nth-child(odd) {
   width: 75%;
   margin: auto;
   margin-bottom: 15px;
-  border-radius: 15px;
+  border-radius: 10px;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   text-align: center;
@@ -341,9 +358,13 @@ tbody > tr:nth-child(odd) {
     padding: 5px;
     border-radius: 15px;
   }
-  a:hover {
+  .navhotel:hover {
     background-color: $blue;
     color: $background;
+    border-radius: 10px;
+    a {
+      color: $background;
+    }
   }
 }
 #nomHotel {
@@ -353,6 +374,22 @@ tbody > tr:nth-child(odd) {
 #vitrineInfos p {
   text-align: center;
   margin-bottom: 5px;
+}
+
+//reservation style
+
+#reservation_grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: 125px;
+  label {
+    font-size: 1.5em;
+    color: $blue;
+  }
+  p {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+  }
 }
 
 // Divers style

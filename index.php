@@ -23,4 +23,6 @@ require './Views/userlist.php';
 require './Views/addsuite.php';
 } elseif ($url == "reservation") {
 require './Views/reservation.php';
+} elseif ($url== "mes_reservations") {
+require './Views/mes_reservations.php';
 }
