@@ -44,11 +44,11 @@ if (isset ($_SESSION['loggedIn'])){
                         </div>
 
                         <div class="datepicker date input-group">
-                            <input type="text" id="startDate" placeholder="Date départ">
+                            <input type="text" id="startDate" placeholder="Date départ" name="startdate">
 
                         </div>
                         <div class="datepicker date input-group">
-                            <input type="text" id="endDate" placeholder="Date de fin">
+                            <input type="text" id="endDate" placeholder="Date de fin" name="enddate">
 
                         </div>
                     </div>
@@ -131,16 +131,14 @@ $(function() {
     $('#startDate').datepicker({
         clearBtn: true,
         format: "dd/mm/yyyy",
-        onSelect: function(dateText, inst) {
-            $("#startDate").val(dateText);
-        }
+        autoclose: true,
+
     });
     $('#endDate').datepicker({
         clearBtn: true,
         format: "dd/mm/yyyy",
-        onSelect: function(dateText, inst) {
-            $("#endDate").val(dateText);
-        }
+        autoclose: true,
+
     });
     $('#btn').on('click', function() {
         $("#startDate").datepicker('hide');
@@ -153,6 +151,7 @@ $('#reservation_form').submit(function(e) {
     var etabid = document.getElementById('etabid').value;
     var startdate = document.getElementById('startDate').value;
     var enddate = document.getElementById('endDate').value;
+    console.log(startdate, enddate)
     $.ajax({
         url: "./script/reservation/reservationvalidation.php",
         method: "post",
