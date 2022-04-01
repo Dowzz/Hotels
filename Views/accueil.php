@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <?php 
  error_reporting(1);
  session_start();
