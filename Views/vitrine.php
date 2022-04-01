@@ -24,8 +24,9 @@ while($data = mysqli_fetch_array($rs)) {
         <span class="burger-icon">
             Voir tout les hotels
         </span>
+
+    </a>
 </div>
-</a>
 <div id="mySidenav" class="sidenav">
     <a id="closeBtn" href="#" class="close">X</a>
     <ul>

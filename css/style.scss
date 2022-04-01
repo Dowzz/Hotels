@@ -36,6 +36,8 @@ body a {
 //Navbar style
 .navbar {
   margin-top: 15px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
 .navbar-brand {
   padding: 5px;
@@ -43,29 +45,19 @@ body a {
 .navbar-brand img {
   height: 68px;
 }
-.groupement {
-  margin-left: 15px;
-  color: $font;
+#menu, #mySidenav, #myMenunav, #hamb {
+  display: none;
 }
-.groupement:hover {
-  color: $blue;
+.navigation{
+
+  text-align: end;
 }
-.navbar-toggler {
-  border: none;
-  position: absolute;
-  right: 20px;
+
+.navigation ul{
+  list-style: none;
 }
-.navbar-nav {
-  position: absolute;
-  right: 30px;
-}
-.nav-item:hover {
-  border-radius: 10px;
-  background-color: $blue;
-}
-.navbar-light .navbar-nav .nav-link:hover {
-  color: $background;
-}
+
+
 
 //Container style
 
@@ -442,9 +434,7 @@ label {
 .suite_list {
   margin-top: 30px;
 }
-#menu, #mySidenav {
-  display: none;
-}
+
 
 // media screen
 
@@ -454,14 +444,27 @@ label {
   }
 }
 @media only screen and (max-width: 815px) {
+  .groupement{
+    display: none;
+  }
+  .welcome{
+    font-size: 3em;
+  }
   #listContainer {
     display: none;
   }
-  #menu, #mySidenav {
+  .navigation{
+    display: none;
+  }
+  #menu, #mySidenav, #myMenunav, #hamb {
     display: block
   };
   #menu {
     text-align: center;
+  }
+  #hamb{
+    display: flex;
+    justify-content: end;
   }
   .sidenav {
     height: 100%;
@@ -568,6 +571,11 @@ label {
   }
   .navbar-nav {
     position: inherit;
+  }
+}
+@media only screen and (max-width: 455px) {
+  .welcome{
+    font-size: em;
   }
 }
 

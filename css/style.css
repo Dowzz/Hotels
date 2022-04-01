@@ -33,6 +33,10 @@ body a {
 
 .navbar {
   margin-top: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
 }
 
 .navbar-brand {
@@ -43,33 +47,16 @@ body a {
   height: 68px;
 }
 
-.groupement {
-  margin-left: 15px;
-  color: #000000;
+#menu, #mySidenav, #myMenunav, #hamb {
+  display: none;
 }
 
-.groupement:hover {
-  color: #3564ff;
+.navigation {
+  text-align: end;
 }
 
-.navbar-toggler {
-  border: none;
-  position: absolute;
-  right: 20px;
-}
-
-.navbar-nav {
-  position: absolute;
-  right: 30px;
-}
-
-.nav-item:hover {
-  border-radius: 10px;
-  background-color: #3564ff;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-  color: #f0f0f0;
+.navigation ul {
+  list-style: none;
 }
 
 .welcome {
@@ -527,10 +514,6 @@ label {
   margin-top: 30px;
 }
 
-#menu, #mySidenav {
-  display: none;
-}
-
 @media only screen and (max-width: 1330px) {
   body {
     font-size: small;
@@ -538,14 +521,31 @@ label {
 }
 
 @media only screen and (max-width: 815px) {
+  .groupement {
+    display: none;
+  }
+  .welcome {
+    font-size: 3em;
+  }
   #listContainer {
     display: none;
   }
-  #menu, #mySidenav {
+  .navigation {
+    display: none;
+  }
+  #menu, #mySidenav, #myMenunav, #hamb {
     display: block;
   }
   #menu {
     text-align: center;
+  }
+  #hamb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
   }
   .sidenav {
     height: 100%;
@@ -649,6 +649,12 @@ label {
   }
   .navbar-nav {
     position: inherit;
+  }
+}
+
+@media only screen and (max-width: 455px) {
+  .welcome {
+    font-size: em;
   }
 }
 

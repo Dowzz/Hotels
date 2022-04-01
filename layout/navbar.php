@@ -1,19 +1,44 @@
-<nav class="navbar navbar-expand-md navbar-light" style="background-color: #f0f0f0;">
-    <a class="navbar-brand" href="index.php"><img src="./img/hypnos.png" alt="logo">
-        <span class="groupement">Groupement Hypnos</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class=" navbar-nav">
-
-
-            <?php
+<?php
                 error_reporting(1);
                 session_start();
-                $type = $_SESSION['role'];
-             
-
+                ?>
+<nav class="navbar navbar-light" style="background-color: #f0f0f0;">
+    <div class="brand">
+        <a class="navbar-brand" href="index.php"><img src="./img/hypnos.png" alt="logo">
+            <p class="groupement">Groupement Hotelier Hypnos</p>
+        </a>
+    </div>
+    <div id="welcome">
+        <h3 class="welcome">Bienvenue <?php echo $nom ?> <?php echo $prenom ?> </h3>
+    </div>
+    <div id="hamb">
+        <a href="#" id="openButton">
+            <span class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </a>
+    </div>
+    <div id="myMenunav" class="sidenav">
+        <a id="closeButton" href="#" class="close">X</a>
+        <ul>
+            <?php
+             navbar();
+                ?>
+        </ul>
+    </div>
+    <div class="navigation">
+        <ul>
+            <?php
+              navbar();
+                ?>
+        </ul>
+    </div>
+</nav>
+<?php 
+function navbar() {
+    $type = $_SESSION['role'];
                 if ($type == "admin") {
                     echo '
 						<li class="nav-item"><a class="nav-link navlink" href="ajout_établissement">Ajout d\'établissement</a></li>
@@ -40,9 +65,26 @@
                         <li class="nav-item"><a class="nav-link navlink" href="devenir_client">Devenez client !</a></li>     
                         ';
                 }
-                ?>
+}
+?>
+<script>
+var menunav = document.getElementById("myMenunav");
+var openBtn = document.getElementById("openButton");
+var closeBtn = document.getElementById("closeButton");
+var hideBtn = document.querySelectorAll("a");
+hideBtn.forEach(function(item) {
+    item.onclick = closeNav;
+});
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
 
-        </ul>
-    </div>
-    <div class="clearfix"> </div>
-</nav>
+
+
+function openNav() {
+    menunav.classList.add("active");
+}
+
+function closeNav() {
+    menunav.classList.remove("active");
+}
+</script>
