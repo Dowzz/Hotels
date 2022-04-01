@@ -18,29 +18,29 @@ exit();
                         </div>
                         <div class="textbox-wrap">
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa fa-user"></i></span>
+
                                 <input type='text' required="required" id="nom" name='nom' value="" class="form-control"
                                     placeholder="Nom">
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa fa-user"></i></span>
+
                                 <input type='text' required="required" id="prenom" name='prenom' value=""
                                     class="form-control" placeholder="Prenom">
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-at"></i></span>
+
                                 <input type='email' required="required" id="email" name='email' value=""
                                     class="form-control" placeholder="Email">
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-lock"></i></span>
+
                                 <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     id="psw" required="required" value="" name="password" class="form-control"
                                     placeholder="Password">
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-lock"></i></span>
+
                                 <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     id="confirmPassword" required="required" value="" name="confirmpassword"

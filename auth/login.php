@@ -11,7 +11,7 @@ exit();
 <body>
     <div class="container_ container_register">
         <div class="row loginrow">
-            <div class="col-lg-4">
+            <div>
                 <div class="login-content">
                     <form id="loginform" action="connexion" method="post">
                         <div class="section-title">
@@ -19,12 +19,12 @@ exit();
                         </div>
                         <div class="textbox-wrap">
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-at"></i></span>
+
                                 <input type='email' required="required" id="email" name='email' value=""
                                     class="form-control" placeholder="Email">
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon "><i class="fa-solid fa-lock"></i></span>
+
                                 <input type="password" required="required" value="" id="password" name="password"
                                     class="form-control" placeholder="Password">
                             </div>

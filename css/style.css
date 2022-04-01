@@ -19,7 +19,7 @@ body {
   font-family: "Hubballi", cursive;
   font-size: 100%;
   background: #fff;
-  width: 100%;
+  width: auto;
   height: auto;
 }
 
@@ -94,6 +94,7 @@ body a {
 }
 
 .table {
+  width: 100%;
   background-color: #f0f0f0;
   border: 1px solid lightgray;
   margin-top: 15px;
@@ -101,22 +102,6 @@ body a {
 
 #mytable {
   padding: 10px;
-}
-
-.table > tbody > tr > td,
-.table > tfoot > tr > td,
-.table > thead > tr > td {
-  width: 100px;
-  border-top: none;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > th {
-  text-align: center;
-  font-style: italic;
 }
 
 tbody > tr:nth-child(odd) {
@@ -605,13 +590,17 @@ label {
 }
 
 @media only screen and (max-width: 796px) {
+  .container {
+    padding: 0;
+  }
   .table td,
   .table th {
     padding: inherit;
     vertical-align: inherit;
   }
   .row {
-    margin-left: inherit;
+    padding: 0;
+    margin: 0;
   }
   #mycarousel {
     display: block;
@@ -623,11 +612,11 @@ label {
   .container_ {
     margin-left: inherit;
     margin-right: inherit;
-    width: 98%;
+    width: 100%;
     background-color: inherit;
   }
   .input-group {
-    width: auto;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -649,12 +638,6 @@ label {
   }
   .navbar-nav {
     position: inherit;
-  }
-}
-
-@media only screen and (max-width: 455px) {
-  .welcome {
-    font-size: em;
   }
 }
 
