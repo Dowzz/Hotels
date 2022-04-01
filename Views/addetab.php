@@ -1,5 +1,3 @@
-<title>ajout établissement</title>
-
 <?php 
 include('./style/style.php');
 include('./Db/connect.php');
