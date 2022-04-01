@@ -348,7 +348,7 @@ tbody > tr:nth-child(odd) {
   background-color: $background;
   border: 1px solid $border;
   box-shadow: 10px 5px 5px black;
-  width: 75%;
+  width: 100%;
   margin: auto;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -442,6 +442,9 @@ label {
 .suite_list {
   margin-top: 30px;
 }
+#menu, #mySidenav {
+  display: none;
+}
 
 // media screen
 
@@ -449,6 +452,78 @@ label {
   body {
     font-size: small;
   }
+}
+@media only screen and (max-width: 815px) {
+  #listContainer {
+    display: none;
+  }
+  #menu, #mySidenav {
+    display: block
+  };
+  #menu {
+    text-align: center;
+  }
+  .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px;
+    background-color: $background;
+    padding-top: 60px;
+    transition: left 0.5s ease;
+    border-radius: 15px;
+  }
+  
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: $blue;
+    display: block;
+    transition: 0.3s;
+  }
+  .sidenav p {
+    color: $background;
+  }
+  
+  
+  .sidenav a:hover {
+    color: $background;
+    background-color: $font;
+    border-radius: 15px;
+  }
+  
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Active class */
+  .sidenav.active {
+    left: 0;
+  }
+  
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 36px;
+  }
+  
+  /* Icône burger */
+  .burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  }
+  
 }
 @media only screen and (max-width: 796px) {
   .table td,

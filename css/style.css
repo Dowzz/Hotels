@@ -1,3 +1,4 @@
+@charset "UTF-8";
 h4,
 h5,
 h6,
@@ -415,7 +416,7 @@ tbody > tr:nth-child(odd) {
   border: 1px solid lightgray;
   -webkit-box-shadow: 10px 5px 5px black;
           box-shadow: 10px 5px 5px black;
-  width: 75%;
+  width: 100%;
   margin: auto;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -526,9 +527,80 @@ label {
   margin-top: 30px;
 }
 
+#menu, #mySidenav {
+  display: none;
+}
+
 @media only screen and (max-width: 1330px) {
   body {
     font-size: small;
+  }
+}
+
+@media only screen and (max-width: 815px) {
+  #listContainer {
+    display: none;
+  }
+  #menu, #mySidenav {
+    display: block;
+  }
+  #menu {
+    text-align: center;
+  }
+  .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px;
+    background-color: #f0f0f0;
+    padding-top: 60px;
+    -webkit-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+    border-radius: 15px;
+  }
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #3564ff;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .sidenav p {
+    color: #f0f0f0;
+  }
+  .sidenav a:hover {
+    color: #f0f0f0;
+    background-color: #000000;
+    border-radius: 15px;
+  }
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  /* Active class */
+  .sidenav.active {
+    left: 0;
+  }
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 36px;
+  }
+  /* Icône burger */
+  .burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
   }
 }
 

@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f0f0f0;">
     <a class="navbar-brand" href="index.php"><img src="./img/hypnos.png" alt="logo">
         <span class="groupement">Groupement Hypnos</span></a>
-    <h3 class="welcome">Bienvenue <?php echo $nom ?> <?php echo $prenom ?> </h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>

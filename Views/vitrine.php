@@ -19,6 +19,35 @@ while($data = mysqli_fetch_array($rs)) {
 }
 ?>
 </div>
+<div id="menu">
+    <a href="#" id="openBtn">
+        <span class="burger-icon">
+            Voir tout les hotels
+        </span>
+</div>
+</a>
+<div id="mySidenav" class="sidenav">
+    <a id="closeBtn" href="#" class="close">X</a>
+    <ul>
+
+        <?php 
+include('../Db/connect.php');
+error_reporting(1);
+session_start();
+$userId = $_SESSION['userid'];
+$sql = "SELECT * FROM etablissement" ;
+$rs = mysqli_query($con, $sql);
+while($data = mysqli_fetch_array($rs)) {
+?>
+        <li>
+            <a class="etab_link" href="#" onClick=affichageInfos(<?= $data['etabId']?>)><?=$data['nom']?>
+            </a>
+        </li>
+        <?php
+}
+?>
+    </ul>
+</div>
 <div class="container_">
     <div id="vitrineSuite">
 
@@ -38,6 +67,22 @@ $(document).ready(function() {
         },
     });
 });
+var sidenav = document.getElementById("mySidenav");
+var openBtn = document.getElementById("openBtn");
+var closeBtn = document.getElementById("closeBtn");
+
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    sidenav.classList.add("active");
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    sidenav.classList.remove("active");
+}
 
 function affichageInfos(id) {
     $("#vitrineSuite").html('');

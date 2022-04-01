@@ -7,6 +7,7 @@
  $prenom = $_SESSION['prenom'];
 ?>
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
         
     ?>
     <title>Accueil</title>
+    <h3 class="welcome">Bienvenue <?php echo $nom ?> <?php echo $prenom ?> </h3>
 </head>
 
 <body>
