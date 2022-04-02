@@ -72,6 +72,7 @@ var sidenav = document.getElementById("mySidenav");
 var openBtn = document.getElementById("openBtn");
 var closeBtn = document.getElementById("closeBtn");
 
+
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
 
@@ -96,6 +97,8 @@ function affichageInfos(id) {
         },
         success: function(response) {
             $("#vitrineSuite").html(response);
+            closeNav();
+
         }
     })
 }
