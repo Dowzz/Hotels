@@ -12,11 +12,13 @@ h2,
 h3 {
   margin-top: 0;
 }
+
 ul,
 ol,
 p {
   margin: 0;
 }
+
 html,
 body {
   font-family: "Hubballi", cursive;
@@ -25,6 +27,7 @@ body {
   width: auto;
   height: auto;
 }
+
 body a {
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
@@ -39,21 +42,28 @@ body a {
   display: grid;
   grid-template-columns: 33% 33% 33%;
 }
+
 .navbar-brand {
   padding: 5px;
 }
+
 .navbar-brand img {
   height: 68px;
 }
-#menu, #mySidenav, #myMenunav, #hamb {
+
+#menu,
+#mySidenav,
+#myMenunav,
+#hamb {
   display: none;
 }
-.navigation{
+
+.navigation {
 
   text-align: end;
 }
 
-.navigation ul{
+.navigation ul {
   list-style: none;
 }
 
@@ -68,9 +78,12 @@ body a {
   font-size: 5em;
   background-color: $background;
 }
-.container-register {
+
+.container_register {
   justify-content: center;
+  padding: 0;
 }
+
 .registerrow,
 .loginrow,
 .addetabrow {
@@ -78,6 +91,7 @@ body a {
   justify-content: center;
   background-color: $background;
 }
+
 .container_ {
   margin-top: 20px;
   margin-left: auto;
@@ -94,22 +108,25 @@ body a {
   border: 1px solid $border;
   margin-top: 15px;
 }
+
 #mytable {
-  
+
   padding: 10px;
 }
 
-tbody > tr:nth-child(odd) {
+tbody>tr:nth-child(odd) {
   background: silver;
 }
+
 .table td {
- 
+
   vertical-align: middle;
   padding: 0;
 }
+
 .tbodyres tr td {
   padding: 10px;
-  
+
 }
 
 //button style
@@ -123,22 +140,28 @@ tbody > tr:nth-child(odd) {
   width: fit-content;
   color: #f0f0f0;
 }
+
 .login-btn {
   margin-top: 15px;
 }
+
 .mybutton {
   border-radius: 15px;
 }
+
 .input-group {
   width: 100%;
 }
+
 .input-group-addon {
   margin: auto;
 }
+
 .reservation {
   text-align: center;
   margin-top: 15px;
 }
+
 #promoteUser,
 #demoteUser,
 #deleteetab,
@@ -148,14 +171,17 @@ tbody > tr:nth-child(odd) {
   border-radius: 15px;
   border: none;
 }
+
 #promoteUser {
   background-color: darkgreen;
   color: $background;
 }
+
 #demoteUser {
   background-color: darkred;
   color: $background;
 }
+
 #deleteetab,
 #delete {
   background-color: $red;
@@ -163,9 +189,11 @@ tbody > tr:nth-child(odd) {
   color: $background;
   margin-bottom: 5px;
 }
+
 #retro-btn {
   background-color: $red;
 }
+
 #modal-btn {
   width: fit-content;
   padding: 5px;
@@ -174,10 +202,12 @@ tbody > tr:nth-child(odd) {
   color: $background;
   font-size: 2em;
 }
+
 #addimage,
 #lien {
   width: 50%;
 }
+
 .addimg {
   display: flex;
   justify-content: center;
@@ -190,12 +220,14 @@ tbody > tr:nth-child(odd) {
   width: 100%;
   margin: 0 auto;
 }
+
 .carousel-item img {
   width: 100%;
   border-radius: 15px;
   height: auto;
   margin-top: 15px;
 }
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: $font;
@@ -207,11 +239,13 @@ tbody > tr:nth-child(odd) {
   height: 600px;
   overflow: hidden;
 }
+
 .modal-content {
   border-radius: 15px;
   background-color: transparent;
   border: none;
 }
+
 .modal-header {
   padding: 0;
 }
@@ -225,6 +259,7 @@ tbody > tr:nth-child(odd) {
   border-radius: 10px;
   overflow: hidden;
 }
+
 .panel-body {
   display: grid;
   grid-template-columns: 30% 50% 20%;
@@ -233,11 +268,13 @@ tbody > tr:nth-child(odd) {
   padding-left: 5px;
   height: 200px;
 }
+
 .panel-text,
 .panel-title {
   margin-left: 15px;
   margin-right: 15px;
 }
+
 .panel-title {
   color: $blue;
 }
@@ -246,17 +283,20 @@ tbody > tr:nth-child(odd) {
   display: grid;
   grid-auto-rows: 75% 25%;
 }
+
 .image_default {
   margin-right: 10px;
   height: auto;
   border-radius: 15px;
 }
+
 .showcase {
   width: 100%;
   height: 150px;
   box-shadow: 5px 0px 0px black;
   border-radius: 15px;
 }
+
 .thumbsnail_list {
   text-align: center;
   position: relative;
@@ -265,10 +305,12 @@ tbody > tr:nth-child(odd) {
   height: 45px;
   margin-top: 5px;
   margin-right: 1px;
+
   img:first-child {
     margin-left: 4px;
   }
 }
+
 .overlay {
   overflow: hidden;
   background: rgba(0, 0, 0, 0.6);
@@ -285,33 +327,42 @@ tbody > tr:nth-child(odd) {
   transition: opacity 0.25s;
   border-radius: 15px;
 }
+
 .overlay:hover {
   opacity: 1;
 }
+
 .thumb {
   width: 45px;
   height: 100%;
   max-height: 45px;
 }
+
 .bigthumb {
   height: 400px;
 }
+
 .details {
   border: 1px solid lightgray;
+
   p {
     font-style: italic;
   }
 }
+
 .price {
   text-align: center;
   margin: auto;
 }
+
 .price p {
   margin: 15px 0;
 }
+
 .price a {
   margin: 10px 0;
 }
+
 #reservation {
   background-color: $blue;
   color: $background;
@@ -337,25 +388,30 @@ tbody > tr:nth-child(odd) {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   text-align: center;
+
   a {
     text-decoration: none;
     font-size: 1.5em;
     padding: 5px;
     border-radius: 15px;
   }
+
   .navhotel:hover {
     background-color: $blue;
     color: $background;
     border-radius: 10px;
+
     a {
       color: $background;
     }
   }
 }
+
 #nomHotel {
   text-align: center;
   color: $blue;
 }
+
 #vitrineInfos p {
   text-align: center;
   margin-bottom: 5px;
@@ -367,10 +423,12 @@ tbody > tr:nth-child(odd) {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-gap: 125px;
+
   label {
     font-size: 1.5em;
     color: $blue;
   }
+
   p {
     margin-bottom: 10px;
     font-size: 1.3em;
@@ -381,6 +439,7 @@ tbody > tr:nth-child(odd) {
 #mes_reservations {
   text-align: center;
 }
+
 #mycontainer h3,
 #noetab {
   text-align: center;
@@ -411,9 +470,11 @@ label {
   display: flex;
   justify-content: center;
 }
+
 .collapsetr {
   display: none;
 }
+
 #alert {
   background-color: $blue;
   color: $background;
@@ -421,6 +482,7 @@ label {
   text-align: center;
   width: 100%;
 }
+
 .suite_list {
   margin-top: 30px;
 }
@@ -433,29 +495,42 @@ label {
     font-size: small;
   }
 }
+
 @media only screen and (max-width: 815px) {
-  .groupement{
+  .groupement {
     display: none;
   }
-  .welcome{
+
+  .welcome {
     font-size: 3em;
   }
+
   #listContainer {
     display: none;
   }
-  .navigation{
+
+  .navigation {
     display: none;
   }
-  #menu, #mySidenav, #myMenunav, #hamb {
+
+  #menu,
+  #mySidenav,
+  #myMenunav,
+  #hamb {
     display: block
-  };
+  }
+
+  ;
+
   #menu {
     text-align: center;
   }
-  #hamb{
+
+  #hamb {
     display: flex;
     justify-content: end;
   }
+
   .sidenav {
     height: 100%;
     width: 250px;
@@ -468,7 +543,7 @@ label {
     transition: left 0.5s ease;
     border-radius: 15px;
   }
-  
+
   /* Sidenav menu links */
   .sidenav a {
     padding: 8px 8px 8px 32px;
@@ -478,28 +553,29 @@ label {
     display: block;
     transition: 0.3s;
   }
+
   .sidenav p {
     color: $background;
   }
-  
-  
+
+
   .sidenav a:hover {
     color: $background;
     background-color: $font;
     border-radius: 15px;
   }
-  
+
   .sidenav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
-  
+
   /* Active class */
   .sidenav.active {
     left: 0;
   }
-  
+
   /* Close btn */
   .sidenav .close {
     position: absolute;
@@ -507,7 +583,7 @@ label {
     right: 0;
     font-size: 36px;
   }
-  
+
   /* Icône burger */
   .burger-icon span {
     display: block;
@@ -516,53 +592,65 @@ label {
     background-color: black;
     margin: 6px 0;
   }
-  
+
 }
+
 @media only screen and (max-width: 796px) {
   .container {
     padding: 0;
   }
+
   .table td,
   .table th {
     padding: inherit;
     vertical-align: inherit;
   }
+
   .row {
-   padding:0;
-   margin: 0;
+    padding: 0;
+    margin: 0;
   }
+
   #mycarousel {
     display: block;
     text-align: -webkit-center;
   }
+
   .card {
     margin-bottom: 15px;
   }
+
   .container_ {
     margin-left: inherit;
     margin-right: inherit;
     width: 100%;
     background-color: inherit;
   }
+
   .input-group {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
   }
+
   .add-btn {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
   }
+
   .fulltr {
     display: none;
   }
+
   .collapsetr {
     display: contents;
   }
+
   .addetabrow {
     background-color: inherit;
   }
+
   .navbar-nav {
     position: inherit;
   }
@@ -575,6 +663,7 @@ label {
   }
 
 }
+
 @media only screen and (max-width: 330px) {
   .groupement {
     display: none;

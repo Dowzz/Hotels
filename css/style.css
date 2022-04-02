@@ -47,7 +47,10 @@ body a {
   height: 68px;
 }
 
-#menu, #mySidenav, #myMenunav, #hamb {
+#menu,
+#mySidenav,
+#myMenunav,
+#hamb {
   display: none;
 }
 
@@ -67,10 +70,11 @@ body a {
   background-color: #f0f0f0;
 }
 
-.container-register {
+.container_register {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0;
 }
 
 .registerrow,
@@ -518,7 +522,10 @@ label {
   .navigation {
     display: none;
   }
-  #menu, #mySidenav, #myMenunav, #hamb {
+  #menu,
+  #mySidenav,
+  #myMenunav,
+  #hamb {
     display: block;
   }
   #menu {
