@@ -98,6 +98,7 @@ body a {
 }
 
 .table {
+  border-collapse: separate;
   width: 100%;
   background-color: #f0f0f0;
   border: 1px solid lightgray;
@@ -219,6 +220,18 @@ tbody > tr:nth-child(odd) {
   margin: 0 auto;
 }
 
+#close {
+  color: #000000;
+  background-color: #f0f0f0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding: px;
+}
+
 .carousel-item img {
   width: 100%;
   border-radius: 15px;
@@ -285,13 +298,14 @@ tbody > tr:nth-child(odd) {
 }
 
 .image_default {
+  text-align: center;
   margin-right: 10px;
   height: auto;
   border-radius: 15px;
 }
 
 .showcase {
-  width: 100%;
+  width: 80%;
   height: 150px;
   -webkit-box-shadow: 5px 0px 0px black;
           box-shadow: 5px 0px 0px black;
@@ -448,6 +462,20 @@ tbody > tr:nth-child(odd) {
   font-size: 1.3em;
 }
 
+.reserve-card {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.reserve-card p {
+  margin-left: 5px;
+}
+
+.reserve-card h4 {
+  text-align: center;
+}
+
 #mes_reservations {
   text-align: center;
 }
@@ -506,6 +534,26 @@ label {
 @media only screen and (max-width: 1330px) {
   body {
     font-size: small;
+  }
+  .gallery {
+    display: inline;
+  }
+  .showcase, .panel-body {
+    height: auto;
+  }
+  .panel-body {
+    display: contents;
+  }
+  #caroussel {
+    height: 400px;
+    overflow: hidden;
+  }
+  .modal-body {
+    height: 400px;
+  }
+  .carousel-item img {
+    height: 400px;
+    overflow: hidden;
   }
 }
 
@@ -609,10 +657,6 @@ label {
     padding: 0;
     margin: 0;
   }
-  #mycarousel {
-    display: block;
-    text-align: -webkit-center;
-  }
   .card {
     margin-bottom: 15px;
   }
@@ -651,6 +695,23 @@ label {
 @media only screen and (max-width: 400px) {
   body {
     font-size: smaller;
+  }
+  #Description, #ownerName, #ownerSurname, #etabAddress, #userSurname, #userRole {
+    display: none;
+  }
+  #caroussel {
+    height: 300px;
+    overflow: hidden;
+  }
+  .modal-body {
+    height: 300px;
+  }
+  .carousel-item img {
+    height: 300px;
+    overflow: hidden;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    bottom: 120px;
   }
 }
 

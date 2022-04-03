@@ -83,10 +83,10 @@ header("location:connexion");
                         <tr class="collapsetr">
                             <th>Nom</th>
                             <th>Ville</th>
-                            <th>Adr.</th>
-                            <th>Desc.</th>
-                            <th>Gérant</th>
-                            <th>Prénom</th>
+                            <th id="etabAddress">Adr.</th>
+                            <th id="Description">Desc.</th>
+                            <th id="ownerName">Gérant</th>
+                            <th id="ownerSurname">Prénom</th>
                             <th>Suppr.</th>
                         </tr>
                     </thead>

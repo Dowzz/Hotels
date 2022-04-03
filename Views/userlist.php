@@ -18,9 +18,9 @@
             <tr>
                 <th>Suppression</th>
                 <th>Nom</th>
-                <th>Prénom</th>
+                <th id="userSurname">Prénom</th>
                 <th>Email</th>
-                <th>Role</th>
+                <th id="userRole">Role</th>
                 <th>Edition role</th>
             </tr>
         </thead>

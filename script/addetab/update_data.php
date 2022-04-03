@@ -15,10 +15,10 @@
 <tr>
     <td><?= $data['nom']?></td>
     <td><?= $data['ville']?></td>
-    <td><?= $data['adresse']?></td>
-    <td><?= $data['description']?></td>
-    <td><?= $data['name']?></td>
-    <td><?= $data['prenom']?></td>
+    <td id="etabAddress"><?= $data['adresse']?></td>
+    <td id="Description"><?= $data['description']?></td>
+    <td id="ownerName"><?= $data['name']?></td>
+    <td id="ownerSurname"><?= $data['prenom']?></td>
     <td>
         <button id="deleteetab" type="button" onClick=deleteetab(<?= $data['etabId']?>)>Supprimer</button>
 

@@ -137,7 +137,11 @@ echo "<h3 style='text-align: center;'>pas de suite enregistré</h3>";
                 <div class="container_">
                     <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
                         <div class="carousel-inner">
-                            <div class="fetched-data"></div>
+
+                            <div class="fetched-data">
+
+                            </div>
+
                         </div>
                         <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev"><span
                                 class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -148,6 +152,9 @@ echo "<h3 style='text-align: center;'>pas de suite enregistré</h3>";
                     </div>
                 </div>
             </div>
+            <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">Fermer</span>
+            </button>
         </div>
     </div>
 </div>

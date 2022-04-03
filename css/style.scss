@@ -103,11 +103,13 @@ body a {
 // Table style
 
 .table {
+  border-collapse: separate;
   width: 100%;
   background-color: $background;
   border: 1px solid $border;
   margin-top: 15px;
 }
+
 
 #mytable {
 
@@ -220,6 +222,16 @@ tbody>tr:nth-child(odd) {
   width: 100%;
   margin: 0 auto;
 }
+#close{
+  color: $font;
+  background-color: $background;
+  width: fit-content;
+ margin-left: auto;
+ margin-right: auto;
+ border-radius: 15px;
+ padding: px;
+
+}
 
 .carousel-item img {
   width: 100%;
@@ -285,13 +297,14 @@ tbody>tr:nth-child(odd) {
 }
 
 .image_default {
+  text-align: center;
   margin-right: 10px;
   height: auto;
   border-radius: 15px;
 }
 
 .showcase {
-  width: 100%;
+  width: 80%;
   height: 150px;
   box-shadow: 5px 0px 0px black;
   border-radius: 15px;
@@ -434,6 +447,18 @@ tbody>tr:nth-child(odd) {
     font-size: 1.3em;
   }
 }
+.reserve-card{
+  background-color: $background;
+  border-radius: 15px;
+  padding: 5px;
+  p{
+margin-left: 5px;
+}
+  h4{
+    text-align: center;
+  }
+  
+}
 
 // Divers style
 #mes_reservations {
@@ -494,6 +519,28 @@ label {
   body {
     font-size: small;
   }
+  .gallery{
+    display: inline;
+   }
+   .showcase, .panel-body{
+     height: auto;
+   }
+   .panel-body{
+     display: contents;
+   }
+   #caroussel{
+     height: 400px;
+     overflow: hidden;
+   }
+   .modal-body{
+     height: 400px;
+   }
+   .carousel-item img{
+     height: 400px;
+     overflow: hidden;
+   }
+
+ 
 }
 
 @media only screen and (max-width: 815px) {
@@ -611,14 +658,15 @@ label {
     margin: 0;
   }
 
-  #mycarousel {
-    display: block;
-    text-align: -webkit-center;
-  }
+
 
   .card {
-    margin-bottom: 15px;
+    margin-bottom: 15px;  
   }
+ 
+
+
+  
 
   .container_ {
     margin-left: inherit;
@@ -661,7 +709,24 @@ label {
   body {
     font-size: smaller;
   }
-
+  #Description, #ownerName, #ownerSurname, #etabAddress, #userSurname, #userRole{
+    display: none;
+  }
+  #caroussel{
+    height: 300px;
+    overflow: hidden;
+  }
+  .modal-body{
+    height: 300px;
+  }
+  .carousel-item img{
+    height: 300px;
+    overflow: hidden;
+  }
+  .carousel-control-next, .carousel-control-prev{
+    bottom: 120px;
+  }
+  
 }
 
 @media only screen and (max-width: 330px) {

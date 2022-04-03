@@ -72,7 +72,7 @@ while($data = mysqli_fetch_array($rs)) {
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true">Fermer</span>
             </button>
 
             <div class="modal-body">
@@ -102,7 +102,7 @@ $('.caroussel').carousel({
 $(document).ready(function() {
     $('#mymodal').on('show.bs.modal', function(e) {
         var rowid = $(e.relatedTarget).data('id');
-        console.log(rowid);
+
         $.ajax({
             type: 'post',
             url: './script/Smanager/fetch_record.php',

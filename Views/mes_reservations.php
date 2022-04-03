@@ -1,26 +1,10 @@
 <h2 id="mes_reservations">Mes reservations</h2>
 <div class="container_ container_register">
     <p id="alert"></p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom Hotel</th>
-                <th>Adresse</th>
-                <th>Ville</th>
-                <th>Nom Suite</th>
-                <th>Date départ</th>
-                <th>Date de fin</th>
-                <th>Prix/nuit</th>
-                <th>Annulation</th>
 
-            </tr>
-        </thead>
-        <tbody class="tbodyres">
+    <div class="tbodyres">
 
-
-
-        </tbody>
-    </table>
+    </div>
 </div>
 
 <script>

@@ -49,7 +49,6 @@ if (isset ($_SESSION['loggedIn'])){
                         </div>
                         <div class="datepicker date input-group">
                             <input type="text" id="endDate" placeholder="Date de fin" name="enddate">
-
                         </div>
                     </div>
                     <div class="login-btn">

@@ -10,16 +10,18 @@ while($data=mysqli_fetch_array($res)) {
     $enddate = $data['enddate'];
     $newenddate = date('d m Y', strtotime($enddate));
     ?>
-<tr>
-    <td><?=$data['nom'] ?></td>
-    <td><?=$data['adresse'] ?></td>
-    <td><?=$data['ville'] ?></td>
-    <td><?=$data['titre']?></td>
-    <td><?=$newstartdate?></td>
-    <td><?=$newenddate?></td>
-    <td><?=$data['prix']?></td>
-    <td><button id="demoteUser" type="button" onClick=cancel(<?= $data['resId']?>)>Annuler</button></td>
-</tr>
+
+<div class="reserve-card">
+    <h4><?=$data['nom'] ?></h4>
+    <p>Adresse : <?=$data['adresse'] ?></p>
+    <p>Ville : <?=$data['ville'] ?></p>
+    <p>Nom de la suite : <?=$data['titre']?></p>
+    <p>Date de départ : <?=$newstartdate?></p>
+    <p>Date de fin : <?=$newenddate?></p>
+    <p>Tarif nuit : <?=$data['prix']?></p>
+    <button id="demoteUser" type="button" onClick=cancel(<?= $data['resId']?>)>Annuler</button>
+
+</div>
 <?php
 }
 

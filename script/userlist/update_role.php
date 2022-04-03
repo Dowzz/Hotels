@@ -9,9 +9,9 @@ while($data = mysqli_fetch_array($rs)) {
         <button id="delUser" type="button" onClick=delUser(<?= $data['userId']?>)>supprimer</button>
     </td>
     <td><?= $data['name']?></td>
-    <td><?= $data['prenom']?></td>
+    <td id="userSurname"><?= $data['prenom']?></td>
     <td><?= $data['email']?></td>
-    <td><?= $data['role']?></td>
+    <td id="userRole"><?= $data['role']?></td>
 
     <?php 
         if($data['role'] == "client") {
