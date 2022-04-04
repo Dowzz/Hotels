@@ -4,7 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <script src="./js/myscript.js"></script>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
-
+<script src="https://use.fontawesome.com/01b29ed799.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Hurricane&display=swap" rel="stylesheet">

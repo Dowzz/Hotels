@@ -48,12 +48,15 @@ function navbar() {
                 }
                 if ($type == "client") {
                     echo '
+                    <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link navlink" href="mes_reservations">Mes reservations</a></li>
                         <li class="nav-item"><a class="nav-link" href="deconnexion">Déconnexion</a></li>
+                        
                         ';
                 } 
                 if ($type == "gérant") {
                     echo '
+                        <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link navlink" href="mon_etablissement">Mon etablissement</a></li>
                         <li class="nav-item"><a class="nav-link" href="deconnexion">Déconnexion</a></li>
                         ';
@@ -61,6 +64,7 @@ function navbar() {
                     }
                 if ($type=="") {
                     echo '
+                        <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
 						<li class="nav-item"><a class="nav-link navlink" href="connexion">Connexion</a></li>
                         <li class="nav-item"><a class="nav-link navlink" href="devenir_client">Devenez client !</a></li>     
                         ';

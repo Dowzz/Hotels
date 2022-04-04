@@ -15,13 +15,19 @@
     <h3 class="mytitle">Liste des utilisateurs</h3>
     <table class="table">
         <thead>
-            <tr>
+            <tr id="userfull">
                 <th>Suppression</th>
                 <th>Nom</th>
                 <th id="userSurname">Prénom</th>
                 <th>Email</th>
                 <th id="userRole">Role</th>
                 <th>Edition role</th>
+            </tr>
+            <tr id="userless">
+                <th>Suppr</th>
+                <th>Nom</th>
+                <th>mail</th>
+                <th>edition</th>
             </tr>
         </thead>
         <tbody id="mytbody">

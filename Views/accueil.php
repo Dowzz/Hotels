@@ -9,11 +9,13 @@
 ?>
 
 
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php 
         include('./layout/navbar.php');
+
         
     ?>
     <title>Groupe Hypnos</title>
@@ -23,10 +25,11 @@
 <body>
 
     <div>
-        <div class="content">
+        <div class="div-content">
 
         </div>
     </div>
+
 </body>
 
 </html>

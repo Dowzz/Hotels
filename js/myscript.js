@@ -1,7 +1,7 @@
 // function one page
 
 $(window).on("load", function () {
-  $(".content").load("./Views/vitrine.php");
+  $(".div-content").load("./Views/vitrine.php");
 });
 $(() => {
   $(function () {
@@ -10,9 +10,9 @@ $(() => {
       e.stopImmediatePropagation();
       url = this.href;
       $.get(url, function (data) {
-        $(".content").html("");
-        $(".content").addClass("detract");
-        $(".content").html(data);
+        $(".div-content").html("");
+        $(".div-content").addClass("detract");
+        $(".div-content").html(data);
       });
     });
   });

@@ -26,6 +26,7 @@ body {
   background: #fff;
   width: auto;
   height: auto;
+  scroll-behavior: smooth;
 }
 
 body a {
@@ -129,6 +130,9 @@ tbody>tr:nth-child(odd) {
 .tbodyres tr td {
   padding: 10px;
 
+}
+#userless{
+  display :none;
 }
 
 //button style
