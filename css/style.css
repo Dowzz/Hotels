@@ -481,6 +481,105 @@ tbody > tr:nth-child(odd) {
   text-align: center;
 }
 
+.chat_icon {
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #000000;
+  position: fixed;
+  right: 0px;
+  bottom: 0;
+  font-size: 25px;
+  color: #3564ff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.chat_box {
+  border-radius: 15px;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 400px;
+  height: 75vh;
+  background: #000000;
+  z-index: 1000;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.chat_box.active {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+#contact_form {
+  margin-top: 80px;
+}
+
+.input-group-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#myContactTitle {
+  text-align: center;
+  color: #f0f0f0;
+}
+
+#contactEmail {
+  width: auto;
+}
+
+#message {
+  display: block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#contact-btn {
+  margin-top: 20px;
+  width: auto;
+  text-align: center;
+}
+
+.myContactButton {
+  width: auto;
+}
+
+#messagealert {
+  color: #3564ff;
+  text-align: center;
+}
+
+.contact_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.date {
+  margin-top: 10px;
+}
+
+.messagecontact {
+  color: #3564ff;
+}
+
+.cadre {
+  border: 1px inset #000000;
+}
+
 #mes_reservations {
   text-align: center;
 }
@@ -694,6 +793,17 @@ label {
   }
   .navbar-nav {
     position: inherit;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .chat_box.active {
+    position: absolute;
+    right: 0px;
+    width: 100%;
+  }
+  #contact_form {
+    margin-top: 10px;
   }
 }
 

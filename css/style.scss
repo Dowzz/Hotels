@@ -464,6 +464,86 @@ margin-left: 5px;
   
 }
 
+//chat box
+
+.chat_icon{
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #000000;
+  position: fixed;
+  right: 0px;
+  bottom: 0;
+  font-size: 25px;
+  color: $blue;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.chat_box{
+  border-radius: 15px;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 400px;
+  height: 75vh;
+  background:$font;
+  z-index: 1000;
+  transition: all 0.3s ease-out ;
+  transform: scaleY(0);
+}
+.chat_box.active {
+  transform: scaleY(1);
+}
+#contact_form{
+  margin-top: 80px;
+}
+.input-group-contact{
+  display: flex;
+  justify-content: center;
+}
+#myContactTitle{
+  text-align: center;
+  color: $background;
+}
+#contactEmail{
+  width: auto;
+}
+#message {
+  display: block;
+  align-items: center;
+  text-align: center;
+}
+#contact-btn{
+  margin-top: 20px;
+  width: auto;
+  text-align: center;
+}
+.myContactButton{
+  width: auto;
+}
+#messagealert{
+  color: $blue;
+  text-align: center;
+}
+
+//contact page
+.contact_row{
+  display: flex;
+  justify-content: center;
+}
+.date{
+  margin-top: 10px;
+
+}
+.messagecontact{
+  color: $blue;
+}
+.cadre {
+  border: 1px inset $font;
+}
+
+
+
 // Divers style
 #mes_reservations {
   text-align: center;
@@ -706,6 +786,17 @@ label {
   .navbar-nav {
     position: inherit;
   }
+
+}
+@media only screen and (max-width: 435px) {
+.chat_box.active{
+  position: absolute;
+  right: 0px;
+  width: 100%;
+}  
+#contact_form{
+  margin-top: 10px;
+}
 
 }
 

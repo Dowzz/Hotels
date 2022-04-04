@@ -1,4 +1,3 @@
-<p id="alert"></p>
 <?php 
         include('./style/style.php');
         include('./Db/connect.php');
@@ -13,6 +12,7 @@
     ?>
 <div class="container_ container_register">
     <h3 class="mytitle">Liste des utilisateurs</h3>
+    <p id="alert"></p>
     <table class="table">
         <thead>
             <tr id="userfull">

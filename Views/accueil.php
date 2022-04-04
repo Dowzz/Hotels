@@ -15,10 +15,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php 
         include('./layout/navbar.php');
+        include ('./script/contact/chat.php');
+        
 
         
     ?>
     <title>Groupe Hypnos</title>
+
 
 </head>
 
@@ -31,5 +34,12 @@
     </div>
 
 </body>
+<script>
+$(document).ready(function() {
+    $(".chat_icon").click(function(event) {
+        $(".chat_box").toggleClass("active");
+    });
+});
+</script>
 
 </html>

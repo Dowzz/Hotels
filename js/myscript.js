@@ -1,5 +1,3 @@
-// function one page
-
 $(window).on("load", function () {
   $(".div-content").load("./Views/vitrine.php");
 });

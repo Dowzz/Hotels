@@ -29,27 +29,27 @@
                         <form id="ajout_suite" action="mon_établissement" method="post">
                             <div class="textbox-wrap">
                                 <div class="input-group">
-                                    <span class="input-group-addon "><i class="fa-solid fa-font"></i></span>
+                                    <span class="input-group-addon "></span>
                                     <input type='text' required="required" id="titre" name='titre' value=""
                                         class="form-control" placeholder="titre de la suite">
                                 </div>
                                 <div class="input-group">
-                                    <span class="input-group-addon "><i class="fa-solid fa-link"></i></span>
+                                    <span class="input-group-addon "></span>
                                     <input type='text' required="required" id="image" name='image' value=""
                                         class="form-control" placeholder="lien image">
                                 </div>
                                 <div class="input-group">
-                                    <span class="input-group-addon "><i class="fa-solid fa-comment"></i></span>
+                                    <span class="input-group-addon "></span>
                                     <input type='text' required="required" id="desc" name='descriptif' value=""
                                         class="form-control" placeholder="Descriptif">
                                 </div>
                                 <div class="input-group">
-                                    <span class="input-group-addon "><i class="fa-solid fa-money-bill"></i></span>
+                                    <span class="input-group-addon "></span>
                                     <input type="text" required="required" value="" id="prix" name="prix"
                                         class="form-control" placeholder="Prix">
                                 </div>
                                 <div class="input-group">
-                                    <span class="input-group-addon "><i class="fa-solid fa-link"></i></span>
+                                    <span class="input-group-addon "></span>
                                     <input type="text" required="required" value="" id="booking" name="booking"
                                         class="form-control" placeholder="Lien Booking">
                                 </div>

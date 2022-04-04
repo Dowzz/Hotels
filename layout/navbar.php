@@ -1,6 +1,7 @@
 <?php
                 error_reporting(1);
                 session_start();
+               
                 ?>
 <nav class="navbar navbar-light" style="background-color: #f0f0f0;">
     <div class="brand">
@@ -41,8 +42,10 @@ function navbar() {
     $type = $_SESSION['role'];
                 if ($type == "admin") {
                     echo '
+                    <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
 						<li class="nav-item"><a class="nav-link navlink" href="ajout_établissement">Ajout d\'établissement</a></li>
                         <li class="nav-item"><a class="nav-link navlink" href="listing_utilisateur">Liste des utilisateurs</a></li>
+                        <li class="nav-item"><a class="nav-link navlink" href="listing_contacts">Contacts en attente</a></li>
                         <li class="nav-item"><a class="nav-link" href="deconnexion">Déconnexion</a></li>						
 						';
                 }
