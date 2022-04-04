@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <h2 style='text-align: center;'>Liste des hotels</h2>
 <div class="panel" id="listContainer">
 
