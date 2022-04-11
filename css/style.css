@@ -540,6 +540,19 @@ tbody > tr:nth-child(odd) {
   text-align: center;
 }
 
+#sujet {
+  width: auto;
+  margin: 10px;
+  padding: 15px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-group-selector {
+  text-align: center;
+}
+
 #contact-btn {
   margin-top: 20px;
   width: auto;

@@ -23,8 +23,7 @@
                 <input type='email' required="required" id="contactEmail" name='email' value="" class="form-control"
                     placeholder="Email">
             </div>
-            <div class="input-group-contact">
-                <label for="contactSujet">Choix du sujet</label>
+            <div class="input-group-selector">
                 <select name="contactSujet" id="sujet" value="">
                     <option value="recla" name="recla">Je souhaite poser une réclamation</option>
                     <option value="supp" name="supp">Je souhaite commander un service supplémentaire</option>
