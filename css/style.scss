@@ -483,7 +483,7 @@ margin-left: 5px;
   border-radius: 15px;
   position: fixed;
   right: 20px;
-  bottom: 100px;
+  bottom: 150px;
   width: 400px;
   height: 75vh;
   background:$font;
@@ -493,9 +493,6 @@ margin-left: 5px;
 }
 .chat_box.active {
   transform: scaleY(1);
-}
-#contact_form{
-  margin-top: 80px;
 }
 .input-group-contact{
   display: flex;
@@ -522,6 +519,7 @@ margin-left: 5px;
   width: auto;
 }
 #messagealert{
+  background-color: black;
   color: $blue;
   text-align: center;
 }

@@ -14,8 +14,10 @@
             while ($data = mysqli_fetch_array($rs)){
                 ?>
             <div class=" contact-card">
-                <h4><?=$data['email'] ?></h4>
+                <h4><?=$data['email'] ?> <?=$data['nom'] ?> <?=$data['prenom'] ?></h4>
                 <div class="cadre">
+                    <label for="sujet">Sujet : <?=$data['sujet']?> </label>
+                    <br>
                     <label for="messagecontact">Message :</label>
                     <p class="messagecontact"><?=$data['message'] ?></p>
                 </div>

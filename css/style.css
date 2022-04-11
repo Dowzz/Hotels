@@ -498,7 +498,7 @@ tbody > tr:nth-child(odd) {
   border-radius: 15px;
   position: fixed;
   right: 20px;
-  bottom: 100px;
+  bottom: 150px;
   width: 400px;
   height: 75vh;
   background: #000000;
@@ -512,10 +512,6 @@ tbody > tr:nth-child(odd) {
 .chat_box.active {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
-}
-
-#contact_form {
-  margin-top: 80px;
 }
 
 .input-group-contact {
@@ -555,6 +551,7 @@ tbody > tr:nth-child(odd) {
 }
 
 #messagealert {
+  background-color: black;
   color: #3564ff;
   text-align: center;
 }

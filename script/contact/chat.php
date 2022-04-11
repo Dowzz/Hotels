@@ -45,7 +45,7 @@
         </div>
     </form>
 
-    <h3 id="messagealert"></h3>
+
 </div>
 
 <script>
@@ -67,11 +67,16 @@ $("#contact_form").submit(function(e) {
             method: "post",
             data: {
                 email: email,
+                prenom: prenom,
+                nom: nom,
+                sujet: sujet,
                 message: message,
                 contact: 1,
             },
             success: function(response) {
                 $('#messagealert').html(response);
+                $(".chat_box").toggleClass("active");
+
             }
 
         })
