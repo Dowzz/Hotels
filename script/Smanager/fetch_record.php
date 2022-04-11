@@ -13,7 +13,7 @@ if($_POST['rowid']) {
 <?php
     }
     $id2 = $_POST['rowid'];
-    $sql2 = "SELECT * FROM imagegal WHERE suiteId = '$id'";
+    $sql2 = "SELECT * FROM imagegal WHERE suiteId = '$id2'";
     $rs2 = mysqli_query($con, $sql2);
     while($data2 = mysqli_fetch_array($rs2)) {
 ?>

@@ -49,8 +49,8 @@ while($data = mysqli_fetch_array($rs)) {
             <h3 class="panel-title"><?= $data['titre'] ?></h3>
             <p class="panel-text"><?= $data['descriptif'] ?></p>
             <div class="addimg">
-                <input type="text" id="lien" placeholder="ajouter un lien vers une image" required="required"
-                    name="image" value="">
+                <input type="text" id='lien<?= $suiteId ?>' placeholder="ajouter un lien vers une image"
+                    required="required" name="image" value="">
                 <input id="addimage" class="mybutton" type="submit" onClick=addimage(<?= $suiteId ?>)
                     value="Ajouter"></input>
             </div>
@@ -131,7 +131,8 @@ function deletesuite(id) {
 }
 
 function addimage(id) {
-    lien = document.getElementById('lien').value
+    lien = document.getElementById('lien' + id).value;
+    console.log(lien);
     $.ajax({
         url: "./script/Smanager/manageSuite.php",
         method: 'POST',
