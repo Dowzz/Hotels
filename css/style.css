@@ -532,7 +532,7 @@ tbody > tr:nth-child(odd) {
   color: #f0f0f0;
 }
 
-#contactEmail {
+#contactEmail, #contactPrenom, #contactNom {
   width: auto;
 }
 
