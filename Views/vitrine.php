@@ -104,7 +104,7 @@ function affichageInfos(id) {
 }
 $(window).scroll(function() {
 
-    var a = 140;
+    var a = 540;
     var pos = $(window).scrollTop();
     if (pos > a) {
         $("#listContainer").css({
@@ -118,7 +118,7 @@ $(window).scroll(function() {
     } else {
         $("#listContainer").css({
             position: 'relative',
-            width: '75%'
+            width: '100%'
 
         });
     }
