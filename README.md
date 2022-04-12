@@ -1,7 +1,7 @@
 # Hotels Hypnos
 
-Voici mon projet de site de booking pour el compte du groupe Hypnos. 
-Le site est fonctionnel et adatpé a tout type d'écran. 
+Voici mon projet de site de booking pour le compte du groupe Hypnos. 
+Le site est fonctionnel et adapté a tout type d'écran. 
 
 ### afin de tester cette application web, rendez vous sur le lien suivant : 
 https://hotelshypnos.herokuapp.com/index.php
