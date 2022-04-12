@@ -19,3 +19,5 @@ note : vous pouvez utiliser un SGBD (exemple phpmyadmin, mysqlworkbench)
 ### pour crée un admin, il suffit d'utiliser le script Admincreate en précisant l'adresse mail 
 Example : `UPDATE user set role= 'admin' where userid = 'Monadresse@mail'`
 
+vous trouverez la documentation disponibles dans le dossier Documentations
+
